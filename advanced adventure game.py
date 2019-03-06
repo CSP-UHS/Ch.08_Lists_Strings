@@ -170,6 +170,7 @@ while done == False:   #Loop for actual game
                             print()
                             print("The End")
                             print()
+                            quit()
                 if player_input.lower() == "no":
                     print("You fly out to orbit")
                     continue
