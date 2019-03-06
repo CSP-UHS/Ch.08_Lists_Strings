@@ -29,9 +29,8 @@ print("The Average is",list_total/len(big_list[math])) #Calculates Average
 from any e-mail address and print it. First ask the user for their e-mail address.
 '''
 e_mail = input("What's your email address?")
-e_mail = e_mail[:9]
+e_mail = e_mail.split('@',1)[0] #Makes e_mail a list and seperates everything after @ to a different list inside the list
 print(e_mail)
-
 
 '''
 TEXT FORMATTING:
@@ -45,7 +44,8 @@ TEXT FORMATTING:
      '''
 score = 41237
 highscore = 1023407
-print("Score:      " + str(score) )
-print("High score: " + str(highscore) )
+print("Score:      ",f"{(score):9,}" )
+print("High score: ",f"{(highscore):8,}")
+
 
 
