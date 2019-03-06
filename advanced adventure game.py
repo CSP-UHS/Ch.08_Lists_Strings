@@ -6,6 +6,7 @@ ADVENTURE PROGRAM
 3.) Expand your program to make it a real adventure game
 
 '''
+print("Made by Alex Randall 2019")
 print("You are aboard the Millennium Falcon and the galaxy is in great danger from The First Order.")
 print("The galaxy needs Luke Skywalker to save everyone")
 print("To find him you need to find the 2 fragments of a map")
@@ -22,7 +23,7 @@ done = False
 
 def help():
     print()
-    print("To play the game you need can enter phrases such as")
+    print("To play the game you can enter phrases such as")
     print("North, East, South, West")
     print("Inventory, Grab, Give, Enter, Exit, and Help, for instructions")
     print()
@@ -35,7 +36,7 @@ room = ["You are near a big cluster of asteroids where Alderaan once was",0,6,3,
 room_list.append(room)
 room = ["You are orbiting a planet full of forests, Takodana",2,4,None,None]
 room_list.append(room)
-room = ["You are near Star-Killer base",6,None,5,3]
+room = ["You are near Starkiller base",6,None,5,3]
 room_list.append(room)
 room = ["You are near a fiery planet, Mustafar",4,None,None,None]
 room_list.append(room)
@@ -132,7 +133,6 @@ while done == False:   #Loop for actual game
                 print("After a while of yelling she throws a lightsaber at your head")
                 print("You black out")
                 print("After a while you regain consciousness")
-            inventory[2] = "lightsaber"
             while True:
                 player_input = input("What do you want to do?")
                 if player_input.lower() == "exit":
@@ -144,9 +144,13 @@ while done == False:   #Loop for actual game
                 elif player_input.lower() == "inventory":
                     for i in range(0,4):
                         print(inventory[i])
-        elif current_room == 4: #COMMANDS FOR STAR-KILLER BASE
+                elif player_input.lower() == "grab":
+                    print("Grab what?")
+                elif player_input.lower() == "grab lightsaber":
+                    inventory[2] = "lightsaber"
+        elif current_room == 4: #COMMANDS FOR STARKILLER BASE
             if inventory[0] == "map":
-                print("As you near the Star-Killer Base you hear a loud sound")
+                print("As you near the Starkiller Base you hear a loud sound")
                 print("You look around and notice the map is glowing")
                 print("You look at the map and it becomes clear")
                 print()
@@ -175,13 +179,13 @@ while done == False:   #Loop for actual game
                     print("You fly out to orbit")
                     continue
             else:
-                print("You go near the Star-Killer Base")
+                print("You go near the Starkiller Base")
                 print("You don't feel the need to be here... yet")
                 continue
         elif current_room == 5:
             print("You draw near this hot planet")
             print("You go to a energy facility")
-            if not inventory[4] == "key":
+            if not inventory[3] == "key":
                 print("There you find a box with a key in it")
             while True:
                 player_input = input("What do you want to do?")
@@ -211,11 +215,16 @@ while done == False:   #Loop for actual game
                 player_input = input("What do you want to do?")
                 if player_input.lower() == "grab":
                     if not inventory[1] == "fragment":
-                        print("You grab the thing buried in the sand")
-                        print("You gained another piece to the map!")
-                        inventory[1] = "fragment"
-                    else:
-                        print("There is nothing to grab")
+                        print("You pick up a locked box with a key hole")
+                        while True:
+                            player_input = input("What do you want to do?")
+                            if player_input == "give key":
+                                if inventory[3] == "key":
+                                    print("You put in the key and turn it")
+                                    print("You found another fragment!")
+                                    inventory[1] = "fragment"
+                                else:
+                                    print("You don't have a key to put in!")
                 if player_input.lower() == "exit":
                     print("You fly out to orbit")
                     next_room = current_room
