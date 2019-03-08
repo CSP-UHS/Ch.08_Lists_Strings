@@ -11,22 +11,19 @@ print("You are aboard the Millennium Falcon and the galaxy is in great danger fr
 print("The galaxy needs Luke Skywalker to save everyone")
 print("To find him you need to find the 2 fragments of a map")
 player_input = input("Would you like instructions?\n\r")
-if player_input.lower() == "yes":
-    print("To play the game you need can enter phrases such as")
-    print("North, East, South, West")
-    print("Inventory, Grab, Give, Enter, Exit, and Help")
+
+def help():
+    print()
+    return("To play the game you can enter phrases such as\n\rNorth, East, South, West\n\rInventory, Grab, Give, Enter, Exit, and Help, for instructions")
+    print()
+
+if player_input.lower() == "yes" or player_input.lower() == "y":
+    print(help())
 
 room_list = []
 inventory = [None,None,None,None]
 current_room = 0
 done = False
-
-def help():
-    print()
-    print("To play the game you can enter phrases such as")
-    print("North, East, South, West")
-    print("Inventory, Grab, Give, Enter, Exit, and Help, for instructions")
-    print()
 
 room = ["You are orbiting a planet known as Naboo",None,1,2,None]    #These generate the map list
 room_list.append(room)
@@ -57,6 +54,7 @@ while done == False:   #Loop for actual game
     elif player_input.lower() == "q" or player_input.lower() == "quit":
         done = True
     elif player_input.lower() == "enter":
+        print()
         if current_room == 0: #Commands for Naboo
             print("You fly down to a castle in Naboo and find a paper")
             if inventory[0] == "fragment" and inventory[1] == "fragment":
@@ -108,6 +106,8 @@ while done == False:   #Loop for actual game
                 elif player_input.lower() == "inventory":
                     for i in range(0,4):
                         print(inventory[i])
+                elif player_input.lower() == "grab" or player_input.lower() == "grab lightsaber" or player_input.lower() == "grab fragment":
+                    print("You don't think that's a good idea")
         elif current_room == 2: #Commands for ALDERAAN
             print("You fly around clusters of asteroids")
             print("You look around an asteroid and something catches your eye")
@@ -148,6 +148,7 @@ while done == False:   #Loop for actual game
                     print("Grab what?")
                 elif player_input.lower() == "grab lightsaber":
                     inventory[2] = "lightsaber"
+                    print("You place the lightsaber in your inventory")
         elif current_room == 4: #COMMANDS FOR STARKILLER BASE
             if inventory[0] == "map":
                 print("As you near the Starkiller Base you hear a loud sound")
@@ -160,6 +161,7 @@ while done == False:   #Loop for actual game
                     print("You zoom into hyper space")
                     print("As you exit hyperspace you see a Tropical Planet")
                     while True:
+                        print()
                         player_input = input("What do you want to do?")
                         if player_input.lower() == "exit":
                             print("You don't want to leave")
@@ -169,6 +171,7 @@ while done == False:   #Loop for actual game
                             for i in range(0, 3):
                                 print(inventory[i])
                         elif player_input.lower() == "enter":
+                            print()
                             print("You fly towards this strange Tropical Planet")
                             print("Soon after you see a island with a mans silhouette")
                             print()
@@ -182,7 +185,7 @@ while done == False:   #Loop for actual game
                 print("You go near the Starkiller Base")
                 print("You don't feel the need to be here... yet")
                 continue
-        elif current_room == 5:
+        elif current_room == 5: #COMMANDS FOR MUSTAFAR
             print("You draw near this hot planet")
             print("You go to a energy facility")
             if not inventory[3] == "key":
@@ -198,34 +201,28 @@ while done == False:   #Loop for actual game
                 elif player_input.lower() == "inventory":
                     for i in range(0,4):
                         print(inventory[i])
-                elif player_input.lower() == "grab":
+                elif player_input.lower() == "grab key":
                     print("You grab the key")
-                    inventory[4] = "key"
+                    inventory[3] = "key"
+                elif player_input.lower() == "grab":
+                    print("Grab what?")
                 elif player_input.lower() == "give":
                     print("Give what?")
                 elif player_input.lower() == "give key":
                     print("You set down the key")
-        elif current_room == 6:
+                    inventory[3] = None
+        elif current_room == 6: #COMMANDS FOR HOTH
             print("You fly down to a cold planet")
             print("You go to a cave")
             print("You find an old wampa arm")
             if not inventory[1] == "fragment":
                 print("You find something buried in the dirt")
+                print("You pick up the thing in the dirt and find a lockbox")
             while True:
                 player_input = input("What do you want to do?")
                 if player_input.lower() == "grab":
-                    if not inventory[1] == "fragment":
-                        print("You pick up a locked box with a key hole")
-                        while True:
-                            player_input = input("What do you want to do?")
-                            if player_input == "give key":
-                                if inventory[3] == "key":
-                                    print("You put in the key and turn it")
-                                    print("You found another fragment!")
-                                    inventory[1] = "fragment"
-                                else:
-                                    print("You don't have a key to put in!")
-                if player_input.lower() == "exit":
+                    print("You already have the lockbox")
+                elif player_input.lower() == "exit":
                     print("You fly out to orbit")
                     next_room = current_room
                     break
@@ -234,14 +231,31 @@ while done == False:   #Loop for actual game
                 elif player_input.lower() == "inventory":
                     for i in range(0,4):
                         print(inventory[i])
+                elif player_input.lower() == "give":
+                    print("Give what?")
+                elif player_input.lower() == "give key":
+                    if inventory[3] == "key":
+                        print("You place the key in the box")
+                        inventory[1] = "fragment"
+                        print("You have found a fragment!")
+                        print("The fragment was placed in your inventory")
+                        inventory[3] = None
+                    else:
+                        print('You do not have a key to give')
+                else:
+                    print("I can't apply this word here")
     elif player_input.lower() == "grab":
         print("There is nothing to grab")
         continue
+    elif player_input.lower() == "help":
+        print(help())
+        continue
     else:
         print()
-        print("I can't apply this word")
+        print("I can't apply this word here")
         continue
     if next_room == None:
+        print()
         print("You can't go that way!")
     else:
         current_room = next_room

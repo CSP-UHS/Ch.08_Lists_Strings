@@ -1,4 +1,4 @@
-secret_message = "Hello im alex ;)"
+secret_message = ""
 solved_message = ""
 encrypted_text = ""
 for c in secret_message:
