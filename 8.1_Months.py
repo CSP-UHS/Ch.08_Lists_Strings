@@ -9,6 +9,10 @@ Once the user quits, print "Goodbye!"
 months = "JanFebMarAprMayJunJulAugSepOctNovDec"
 
 '''
-months = "JanFebMarAprMayJunJulAugSepOctNovDec"
+months = (["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
+user = int(input("Hello user type 1-12 for the months and 13 for quit : "))
 
-user = input("Hello")
+print(months[user-1])
+
+if user == 13:
+    print("You quit")
