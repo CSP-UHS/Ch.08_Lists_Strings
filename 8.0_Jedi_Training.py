@@ -30,9 +30,9 @@ to add the numbers. Finish adding the numbers before you divide.
 2.) Write a program that will strip the username (whatever is in front of the @ symbol)
 from any e-mail address and print it. First ask the user for their e-mail address.
 '''
-email = input("Hi, Please input your email here : ")
-
-print(email[0:email.find("@")])
+# email = input("Hi, Please input your email here : ")
+#
+# print(email[0:email.find("@")])
 
 '''
 TEXT FORMATTING:
