@@ -32,8 +32,8 @@ from any e-mail address and print it. First ask the user for their e-mail addres
 '''
 email = input("Hi, Please input your email here : ")
 
+print(email[0:email.find("@")])
 
-print(email[0:6])
 '''
 TEXT FORMATTING:
 3.) Make following program output the following:
