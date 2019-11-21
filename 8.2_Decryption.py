@@ -14,7 +14,7 @@ secret_message = "Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r
 
 for j in range(-20, 20, 1):
     decrypt = ""
-    for i in range(len(secret_message)):  #gives me the aski number
+    for i in range(len(secret_message)):
         num = (ord(secret_message[i]))
         num+=j
         decrypt+=(chr(num))

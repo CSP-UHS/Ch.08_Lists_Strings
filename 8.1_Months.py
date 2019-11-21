@@ -9,9 +9,16 @@ Once the user quits, print "Goodbye!"
 months = "JanFebMarAprMayJunJulAugSepOctNovDec"
 
 '''
-# months = (["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
-# user = int(input("Hello user type 1-12 for the months and 13 for quit : "))
-#
+months = "JanFebMarAprMayJunJulAugSepOctNovDec"
+
+user = int(input("Hello user type 1-12 for the months and 13 for quit : "))
+
+end = user * 3
+start = 1
+
+print(months[start:end])
+
+
 # if user == 13:
 #     print("Goodbye")
 # elif user:
