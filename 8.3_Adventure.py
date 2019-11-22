@@ -6,3 +6,7 @@ ADVENTURE PROGRAM
 3.) Expand your program to make it a real adventure game
 
 '''
+room_list =[]
+
+room = [str("living room"), 1, 2, 3, 4]
+

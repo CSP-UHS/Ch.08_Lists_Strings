@@ -10,10 +10,7 @@ months = "JanFebMarAprMayJunJulAugSepOctNovDec"
 
 '''
 months = "JanFebMarAprMayJunJulAugSepOctNovDec"
-
 user = int(input("Hello user type 1-12 for the months and 13 for quit : "))
-
 end = user * 3
 start = (user-1)*3
-
 print(months[start:end])
