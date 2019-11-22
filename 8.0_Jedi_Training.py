@@ -15,12 +15,11 @@ c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
 list_total = 0
 
 my_list = [a_list, b_list, c_list]
+len_list = [15, 9, 23]
 
 for my_list in range(3):
-    list_total += my_list/len(a_list)
+    list_total += my_list/len("What do i put here???")
     print(list_total)
-
-
 '''
 2.) Write a program that will strip the username (whatever is in front of the @ symbol)
 from any e-mail address and print it. First ask the user for their e-mail address.
