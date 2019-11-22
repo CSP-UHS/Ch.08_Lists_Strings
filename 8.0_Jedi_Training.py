@@ -8,23 +8,18 @@ Don't use that. Sum the numbers individually as shown in the chapter.
 Also, a common mistake is to calculate the average each time through the loop 
 to add the numbers. Finish adding the numbers before you divide.
 # '''
-# a_list = [3,12,3,5,3,4,6,8,5,3,5,6,3,2,4]
-# b_list = [4,15,2,7,8,3,1,10,9]
-# c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
-#
-# list_total = 0
-#
-# for item in a_list:
-#     list_total += item/len(a_list)
-# print(list_total)
-#
-# for item in b_list:
-#     list_total += item/len(b_list)
-# print(list_total)
-#
-# for item in c_list:
-#     list_total += item/len(c_list)
-# print(list_total)
+a_list = [3,12,3,5,3,4,6,8,5,3,5,6,3,2,4]
+b_list = [4,15,2,7,8,3,1,10,9]
+c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
+
+list_total = 0
+
+my_list = [a_list, b_list, c_list]
+
+for my_list in range(3):
+    list_total += my_list/len(a_list)
+    print(list_total)
+
 
 '''
 2.) Write a program that will strip the username (whatever is in front of the @ symbol)
