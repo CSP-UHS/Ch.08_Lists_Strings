@@ -14,15 +14,24 @@ room.append(room_list)
 
 current_room = 0
 
+next_room = room_list[current_room][1]
+
 done = False
 
 while done == False:
     print("still going")
     print("")
-    print(room_list[current_room[0]])
+    # print(room_list[current_room[0]])
     ans = input("What direction would you like to go N,E,W,S or Q for quit")
-    if ans = q
+
+    if ans.lower == "q":
         done = True
+    elif ans.lower == "n":
+        print("You went north")
+    if next_room == None:
+        print("You cant fo that way")
+    else:
+        current_room == next_room
 
 
 
