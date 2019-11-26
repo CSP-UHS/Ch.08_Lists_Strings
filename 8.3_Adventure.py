@@ -6,7 +6,23 @@ ADVENTURE PROGRAM
 3.) Expand your program to make it a real adventure game
 
 '''
-room_list =[]
+room_list =[] #empty ray of room list
 
-room = [str("living room"), 1, 2, 3, 4]
+room = ["living room", 1, 2, 3, 4]
+
+room.append(room_list)
+
+current_room = 0
+
+done = False
+
+while done == False:
+    print("still going")
+    print("")
+    print(room_list[current_room[0]])
+    ans = input("What direction would you like to go N,E,W,S or Q for quit")
+    if ans = q
+        done = True
+
+
 

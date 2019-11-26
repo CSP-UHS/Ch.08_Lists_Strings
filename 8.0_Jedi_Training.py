@@ -12,15 +12,19 @@ a_list = [3,12,3,5,3,4,6,8,5,3,5,6,3,2,4]
 b_list = [4,15,2,7,8,3,1,10,9]
 c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
 
-list_total = 0
-
+total = 0
+# average = total/len(mun)
 
 my_list = [a_list, b_list, c_list]
-len_list = [[a_list], [b_list], [c_list]]
+mun = [a_list, b_list, c_list]
 
 for my_list in range(3):
-    list_total += my_list/len(len_list)
-    print(list_total)
+    total += my_list
+    print(total/len(mun))
+
+# for item in my_list:
+#     total+=item
+# print(average)
 
 '''
 2.) Write a program that will strip the username (whatever is in front of the @ symbol)
