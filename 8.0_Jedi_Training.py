@@ -14,15 +14,14 @@ c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
 
 total = 0
 
-for item in range(1):
-    total += input
-
 # for item in my_list:
 #     total+=item
 # print(average)
 
-list = input("Hello user! what list would you like to run? a_list, b_list or c _list")
-print(total/len(input)
+list = input("Hello user! what list would you like to run? a_list, b_list or c _list : ")
+for item in list(1):
+    total += input
+print(total/len(input))
 
 
 # '''
