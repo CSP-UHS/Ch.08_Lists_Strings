@@ -9,8 +9,20 @@ Once the user quits, print "Goodbye!"
 months = "JanFebMarAprMayJunJulAugSepOctNovDec"
 
 '''
-# months = "JanFebMarAprMayJunJulAugSepOctNovDec"
+months = "JanFebMarAprMayJunJulAugSepOctNovDec"
 # user = int(input("Hello user type 1-12 for the months and 13 for quit : "))
 # end = user * 3
 # start = (user-1)*3
 # print(months[start:end])
+
+while True:
+    user = int(input("\nHello user type 1-12 for the months and 13 for quit : "))
+    end = user * 3
+    start = (user-1)*3
+    print()
+    print(months[start:end])
+    if user == 13:
+        done = False
+        print("Goodbye")
+    if user < 0 or user > 13:
+        print("sorry that's not a month try again")
