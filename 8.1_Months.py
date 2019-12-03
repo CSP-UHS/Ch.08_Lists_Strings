@@ -24,5 +24,3 @@ while True:
     if user == 13:
         done = False
         print("Goodbye")
-    if user < 0 or user > 13:
-        print("sorry that's not a month try again")
