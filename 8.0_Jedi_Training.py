@@ -18,8 +18,15 @@ c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
 2.) Write a program that will strip the username (whatever is in front of the @ symbol)
 from any e-mail address and print it. First ask the user for their e-mail address.
 '''
-
-
+Done = False
+while not Done:
+    Email=input("What is your email address?")
+    Username=""
+    for item in Email:
+        if item == "@":
+            break
+        Username+=item
+    print(Username)
 
 '''
 TEXT FORMATTING:
