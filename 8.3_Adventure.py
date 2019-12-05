@@ -15,16 +15,26 @@ room_list.append(room) #THE COPY
 room = ["You are now in the South Hall", 5, 3, 0, 1]   #THE COPY
 room_list.append(room) #THE COPY
 
-room = ["You are now in the SW Bedroom", 4, 2, None, None]   #THE COPY
+room = ["You are now in the 2 Bedroom", 4, 2, None, None]   #THE COPY
 room_list.append(room) #THE COPY
 
 room = ["You are now in the South Hall", 5, 3, 0, 1]   #THE COPY
 room_list.append(room) #THE COPY
 
-room = ["You are now in the Bedroom 1 Hall", 5, 3, 0, 1]   #THE COPY
+room = ["You are now in the Bedroom 1", None, 5, 1, None]   #THE COPY
+room_list.append(room) #THE COPY
+
+room = ["You are now in the North Hall", 7, 6, 2, 4]   #THE COPY
+room_list.append(room) #THE COPY
+
+room = ["You are now in the Kitchen", None, None, 3, 5]   #THE COPY
+room_list.append(room) #THE COPY
+
+room = ["You are now in the Dining room", 6, None, None, 2]   #THE COPY
 room_list.append(room) #THE COPY
 
 current_room = 0
+
 
 done = False
 
