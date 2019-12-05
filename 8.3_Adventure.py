@@ -21,6 +21,9 @@ room_list.append(room) #THE COPY
 room = ["You are now in the South Hall", 5, 3, 0, 1]   #THE COPY
 room_list.append(room) #THE COPY
 
+room = ["You are now in the Bedroom 1 Hall", 5, 3, 0, 1]   #THE COPY
+room_list.append(room) #THE COPY
+
 current_room = 0
 
 done = False
