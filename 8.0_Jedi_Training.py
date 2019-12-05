@@ -28,11 +28,16 @@ print("The average is", total//len(L))
 from any e-mail address and print it. First ask the user for their e-mail address.
 '''
 '''
-a=input("What is your email")
-print("Gimme a sec...")
-result=a.find("@")
-d=str.find(a,"@",result)
-print("Your username is",a[:d])
+while True:
+    a=input("What is your email")
+    count=0
+    position=0
+    for item in a:
+        if item=="@":
+            position=count
+        count+=1
+    print("Your username is",a[0:position])
+
 
 '''
 '''
@@ -47,7 +52,7 @@ TEXT FORMATTING:
 '''
 score = 41237
 highscore = 1023407
-print("Score:      ", "{:,}".format(score) )
-print("High score: ", "{:,}".format(highscore) )
+print("Score:      ", f"{score:,}")
+print("High score: ", f"{highscore:,}")
 
 
