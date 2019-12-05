@@ -41,6 +41,7 @@ room_list.append(room)
 
 current_room = 0
 done = False
+inventory = []
 
 while done == False:
     print(room_list[current_room][0])
