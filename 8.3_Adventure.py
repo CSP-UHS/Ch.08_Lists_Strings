@@ -8,28 +8,34 @@ ADVENTURE PROGRAM
 '''
 room_list = [] #empty ray of room list
 
-room = ["Welcome to the front porch Detective. You have finally made it! We need you to look at the body quickly! Go find the body", 2, None, None, None]   #THE COPY
+room = ["Welcome to the front porch Detective. You have finally made it! We need you to look at the body quickly! Go find the body", 1, None, None, None]   #THE COPY
 room_list.append(room) #THE COPY
 
-room = ["You are now in the 2 Bedroom", 4, 2, None, None]   #THE COPY
+room = ["You are now in the Ballroom", None, 9, 0, 2]   #THE COPY
 room_list.append(room) #THE COPY
 
-room = ["You are now in the South Hall", 5, 3, 0, 1]   #THE COPY
+room = ["You are now in the Conservatory", 3, None, 2, None]   #THE COPY
 room_list.append(room) #THE COPY
 
-room = ["You are now in the Dining room, but smell somthing odd...wait is that blood?", 6, None, None, 2]   #THE COPY
+room = ["You are now in the Billard room", 4, None, 2, None]   #THE COPY
 room_list.append(room) #THE COPY
 
-room = ["You are now in the grand bedroom", None, 5, 1, None]   #Bed room 1
+room = ["You are now in the Library", 5, None, 4, None]   #THE COPY
 room_list.append(room) #THE COPY
 
-room = ["You are now in the North Hall, it is elegent with red carpets lining the floor and frames of people on the walls", 7, 6, 2, 4]   #THE COPY
+room = ["You are now in the Study", None, 6, 4, None]   #Bed room 1
 room_list.append(room) #THE COPY
 
-room = ["You have walked into the kitchen to find blood splatter every where. The body lays on the floor face downwards a knife stuck in the cospes back", None, None, 3, 5]   #THE COPY
+room = ["You are now in the Hall", None, 7, None, 5]   #Bed room 1
 room_list.append(room) #THE COPY
 
-room = ["You have walked onto the balcony", None, None, 5, None]   #THE COPY
+room = ["You are now in the Lounge", None, None, 8, 6]   #THE COPY
+room_list.append(room) #THE COPY
+
+room = ["You are now in the Dining room, but smell somthing odd...wait is that blood?", 7, None, 9, None]   #THE COPY
+room_list.append(room) #THE COPY
+
+room = ["You have walked in the Kitchen", 8, None, None, 1]   #THE COPY
 room_list.append(room) #THE COPY
 
 current_room = 0
