@@ -35,13 +35,37 @@ room_list.append(room) #THE COPY
 
 current_room = 0
 
-
 done = False
 
 while False:
     print()
-    print("Hello and Welcome to My Grand Manor, You are finally  ")
-    done = True
+    room_list[current_room][0]
+    print("Hello Detective! You have finally made it! I was worried you were lost, Please come and take a look at the body")
+    direction =input("What direction would you like to go? N, E, S, W or Q for quit: ")
+    if direction.lower() == "north" or direction.lower() == "n":
+        next_room = room_list[current_room][1]
+
+    elif direction.lower() == "east" or direction.lower() == "e":
+        next_room = room_list[current_room][1]
+
+    elif direction.lower() == "south" or direction.lower() == "s":
+        next_room = room_list[current_room][1]
+
+    elif direction.lower() == "west" or direction.lower() == "w":
+        next_room = room_list[current_room][1]
+
+    if next_room == None:
+        print("You cant fo that way")
+    else:
+        current_room = next_room
+
+    if direction.lower() == "q":
+        done = True
+
+
+
+
+
 
 
 
