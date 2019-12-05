@@ -1,4 +1,4 @@
-#Sign your name:________________
+#Sign your name:Kenny Flory
 
 '''
 1.)
@@ -8,18 +8,33 @@ Don't use that. Sum the numbers individually as shown in the chapter.
 Also, a common mistake is to calculate the average each time through the loop 
 to add the numbers. Finish adding the numbers before you divide.
 '''
+'''
 a_list = [3,12,3,5,3,4,6,8,5,3,5,6,3,2,4]
 b_list = [4,15,2,7,8,3,1,10,9]
 c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
-
-
-
-'''
+total = 0
+a = input("What list do you want?"); m=0
+if a.lower() == "a":
+    b = a_list
+elif a.lower() == "b":
+    b = b_list
+elif a.lower() == "c":
+    b = c_list
+for item in b:
+    total += item
+print(total)
+print("The Average Is:", total//(len(b)))
+''''''
 2.) Write a program that will strip the username (whatever is in front of the @ symbol)
 from any e-mail address and print it. First ask the user for their e-mail address.
 '''
-
-
+a = input("Bro what's your email?");print("Give me a sec...")
+count=0;position=0
+for item in a:
+    if item=="@":
+        position=count
+    count+=1
+print("Your Username Is:", a[:position])
 
 '''
 TEXT FORMATTING:
@@ -30,10 +45,11 @@ TEXT FORMATTING:
      
      Do not use any plus sign (+) in your code.
      You should only have two double quotes in each print statement.
-     '''
+'''
+'''
 score = 41237
 highscore = 1023407
-print("Score:      " + str(score) )
-print("High score: " + str(highscore) )
-
+print("Score:      ", f"{score:,}")
+print("High score: ", f"{highscore:,}")
+'''
 
