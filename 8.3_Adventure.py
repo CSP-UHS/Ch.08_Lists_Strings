@@ -6,10 +6,9 @@ ADVENTURE PROGRAM
 3.) Expand your program to make it a real adventure game
 
 '''
-# room_list[1]
 room_list = [] #empty ray of room list
 
-room = ["Welcome to the front porch there", 2, None, None, None]   #THE COPY
+room = ["Welcome to the front porch Detective, we need you to look at the body quickly! Go find the body", 2, None, None, None]   #THE COPY
 room_list.append(room) #THE COPY
 
 room = ["You are now in the South Hall", 5, 3, 0, 1]   #THE COPY
@@ -21,16 +20,16 @@ room_list.append(room) #THE COPY
 room = ["You are now in the South Hall", 5, 3, 0, 1]   #THE COPY
 room_list.append(room) #THE COPY
 
-room = ["You are now in the Bedroom 1", None, 5, 1, None]   #THE COPY
+room = ["You are now in the grand bedroom", None, 5, 1, None]   #Bed room 1
 room_list.append(room) #THE COPY
 
-room = ["You are now in the North Hall", 7, 6, 2, 4]   #THE COPY
+room = ["You are now in the North Hall, it is elegent with red carpets lining the floor and frames of people on the walls", 7, 6, 2, 4]   #THE COPY
 room_list.append(room) #THE COPY
 
-room = ["You are now in the Kitchen", None, None, 3, 5]   #THE COPY
+room = ["You have walked into the kitchen to find blood splatter every where. The body lays on the floor face downwards a knife stuck in the cospes back", None, None, 3, 5]   #THE COPY
 room_list.append(room) #THE COPY
 
-room = ["You are now in the Dining room", 6, None, None, 2]   #THE COPY
+room = ["You are now in the Dining room, but smell somthing odd...wait is that blood?", 6, None, None, 2]   #THE COPY
 room_list.append(room) #THE COPY
 
 current_room = 0
