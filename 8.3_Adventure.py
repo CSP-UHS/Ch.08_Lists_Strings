@@ -6,32 +6,28 @@ ADVENTURE PROGRAM
 3.) Expand your program to make it a real adventure game
 
 '''
-room_list =[] #empty ray of room list
+# room_list[1]
+room_list = [] #empty ray of room list
 
-room = ["living room", 1, 2, 3, 4]
+room = ["Welcome to the front porch there", 2, None, None, None]   #THE COPY
+room_list.append(room) #THE COPY
 
-room.append(room_list)
+room = ["You are now in the South Hall", 5, 3, 0, 1]   #THE COPY
+room_list.append(room) #THE COPY
+
+room = ["You are now in the SW Bedroom", 4, 2, None, None]   #THE COPY
+room_list.append(room) #THE COPY
+
+room = ["You are now in the South Hall", 5, 3, 0, 1]   #THE COPY
+room_list.append(room) #THE COPY
 
 current_room = 0
 
-next_room = room_list[current_room][1]
-
 done = False
 
-while done == False:
-    print("still going")
-    print("")
-    # print(room_list[current_room[0]])
-    ans = input("What direction would you like to go N,E,W,S or Q for quit")
+while False:
+    print("test")
 
-    if ans.lower == "q":
-        done = True
-    elif ans.lower == "n":
-        print("You went north")
-    if next_room == None:
-        print("You cant fo that way")
-    else:
-        current_room == next_room
 
 
 
