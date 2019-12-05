@@ -54,10 +54,10 @@ TEXT FORMATTING:
      Do not use any plus sign (+) in your code.
      You should only have two double quotes in each print statement.
 '''
-# score = 41237
-# highscore = 1023407
-# print(f"Score: {score:,}")
-# print(f"High score: {highscore:,}")
+score = 41237
+highscore = 1023407
+print(f"Score:      {score:>9,d}")
+print(f"High score: {highscore:,}")
 
 
 

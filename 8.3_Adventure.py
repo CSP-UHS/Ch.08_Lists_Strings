@@ -39,7 +39,9 @@ current_room = 0
 done = False
 
 while False:
-    print("test")
+    print()
+    print("Hello and Welcome to My Grand Manor, You are finally  ")
+    done = True
 
 
 
