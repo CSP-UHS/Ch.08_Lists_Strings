@@ -20,14 +20,14 @@ to add the numbers. Finish adding the numbers before you divide.
 from any e-mail address and print it. First ask the user for their e-mail address.
 '''
 
-while True:
-    email = input("What is your email address?")
-    username = ""
-    for item in email:
-        if item != "@":
-            break
-        username += item
-    print(username)
+# while True:
+#     email = input("What is your email address?")
+#     username = ""
+#     for item in email:
+#         if item != "@":
+#             break
+#         username += item
+#     print(username)
 
 '''
 TEXT FORMATTING:
@@ -41,9 +41,9 @@ TEXT FORMATTING:
      You should only have two double quotes in each print statement.
  '''
 
-# score = 41237
-# highscore = 1023407
-# print("Score:      " + str(score) )
-# print("High score: " + str(highscore) )
+score = 41237
+highscore = 1023407
+print("Score:      " + str(score))
+print("High score: " + str(highscore) )
 
 
