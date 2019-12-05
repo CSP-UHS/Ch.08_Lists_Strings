@@ -55,7 +55,7 @@ TEXT FORMATTING:
      You should only have two double quotes in each print statement.
 '''
 # score = 41237
-# highscore =  1023407
+# highscore = 1023407
 # print(f"Score: {score:,}")
 # print(f"High score: {highscore:,}")
 
