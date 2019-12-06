@@ -46,6 +46,20 @@ inventory = []
 while done == False:
     print(room_list[current_room][0])
     print()
+    if current_room == 2:   #Conservatory
+        an = input("would you like to inspect the couch? Yes or No : ")
+        if an.lower == "yes" or an.lower == "y":
+            print("You walk over to the couch, you look around for any imperfections. You can find none, you almost walk away but then somthing catches your eye")
+            print("there are scuff marks on the floor, you push the coach away from the wall, and see a secret entrance, where does it lead?")
+            print()
+            an = input("Would you like to go in the passage? Yes or No : ")
+            if an.lower == "yes" or an.lower == "y":
+                print("You open the wooden door and jump through. its nothing but darkness inside, you feel against the walls until you hit another door")
+                current_room = 7
+                print(current_room)
+                print("You open the door. Huh that's unusual, you end up in the Lounge.")
+        if an.lower == "no" or an.lower == "n":
+            print("you walk away from the coach, its not worth it. What was that old saying again, O-h, curiosity killed the cat. Its best left untouched.")
     direction =input("What direction would you like to go? N, E, S, W or Q for quit: ")
     print()
     if direction.lower() == "north" or direction.lower() == "n":
@@ -74,18 +88,7 @@ while done == False:
             current_room = next_room
     if direction.lower() == "q":
         done = True
-    if current_room == room[2]:   #Conservatory
-        an = input("would you like to inspect the couch? Yes or No : ")
-        if an.lower == "yes" or an.lower == "y":
-            print("You walk over to the couch, you look around for any imperfections. You can find none, you almost walk away but then somthing catches your eye")
-            print("there are scuff marks on the floor, you push the coach away from the wall, and see a secret entrance, where does it lead?")
-            print()
-            an = input("Would you like to go in the passage? Yes or No : ")
-            if an.lower == "yes" or an.lower == "y":
-                print("You open the wooden door and jump through. its nothing but darkness inside, you feel against the walls until you hit another door")
-                print("You open the door. Huh that's unusual, you end up in the Lounge.")
-        if an.lower == "no" or an.lower == "n":
-            print("you walk away from the coach, its not worth it. What was that old saying again, O-h, curiosity killed the cat. Its best left untouched.")
+
 
 
 
