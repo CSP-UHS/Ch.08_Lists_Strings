@@ -6,4 +6,5 @@ ADVENTURE PROGRAM
 3.) Expand your program to make it a real adventure game
 
 '''
-room_list=()
+room_list=[]
+room=["you enter the doorway into a room with a couch, a t.v., "],[],[],[],[]

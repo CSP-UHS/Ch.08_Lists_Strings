@@ -3,7 +3,7 @@ print(f"Your grade is {grade:.2f}") #. and the number is how many decimal places
 #.2 it gives 2 sigfigs it rounds     :+5628957   will print + or - sign with the number
 #                                    :
 
-'''look at table'''
+'''look at table
 
 
 A_emptylist = []
@@ -12,3 +12,8 @@ A_Tuple=(255,0,0)
 
 print(A_list[0])
 #cant change tuples (imutable), lists can be changed
+
+'''
+
+print(chr(64))
+print(ord("!"))
