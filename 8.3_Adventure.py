@@ -50,17 +50,17 @@ while done == False:
         an = input("would you like to inspect the couch? Yes or No : ")
         if an.lower == "yes" or an.lower == "y":
             print("You walk over to the couch, you look around for any imperfections. You can find none, you almost walk away but then somthing catches your eye")
-            print("there are scuff marks on the floor, you push the coach away from the wall, and see a secret entrance, where does it lead?")
-            print()
+            print("there are scuff marks on the floor, you push the coach away from the wall, and see a secret entrance, where does it lead?\n")
             an = input("Would you like to go in the passage? Yes or No : ")
-            if an.lower == "yes" or an.lower == "y":
+            if an.lower() == "yes" or an.lower() == "y":
                 print("You open the wooden door and jump through. its nothing but darkness inside, you feel against the walls until you hit another door")
                 current_room = 7
-                print(current_room)
+                current_room = next_room
+                print("current_room")
                 print("You open the door. Huh that's unusual, you end up in the Lounge.")
         if an.lower == "no" or an.lower == "n":
             print("you walk away from the coach, its not worth it. What was that old saying again, O-h, curiosity killed the cat. Its best left untouched.")
-    direction =input("What direction would you like to go? N, E, S, W or Q for quit: ")
+    direction = input("What direction would you like to go? N, E, S, W or Q for quit: ")
     print()
     if direction.lower() == "north" or direction.lower() == "n":
         next_room = room_list[current_room][1]
