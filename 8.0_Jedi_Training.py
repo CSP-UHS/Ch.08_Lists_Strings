@@ -36,7 +36,7 @@ TEXT FORMATTING:
 3.) Make following program output the following:
      
      Score:          41,237
-     High score:  1,023,407
+     High score:   1,023,407
      
      Do not use any plus sign (+) in your code.
      You should only have two double quotes in each print statement.
