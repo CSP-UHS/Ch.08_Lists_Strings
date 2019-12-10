@@ -1,4 +1,4 @@
-#Sign your name:________________
+#Sign your name: Tristan
 
 '''
 1.)
@@ -8,24 +8,48 @@ Don't use that. Sum the numbers individually as shown in the chapter.
 Also, a common mistake is to calculate the average each time through the loop 
 to add the numbers. Finish adding the numbers before you divide.
 '''
+x=0
+num=0
+total=0
 a_list = [3,12,3,5,3,4,6,8,5,3,5,6,3,2,4]
 b_list = [4,15,2,7,8,3,1,10,9]
 c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
-
-
-
+for i in range(len(a_list)):
+    num = a_list[x]
+    x+=1
+    total+=num
+total/=(len(a_list))
+print("The average is:", total)
 '''
 2.) Write a program that will strip the username (whatever is in front of the @ symbol)
 from any e-mail address and print it. First ask the user for their e-mail address.
 '''
-
+x=0
+email_valid = False
+email = input("Email Address: ")
+email = email.lstrip()
+email = (email + " ")
+while email_valid == False:
+    x=0
+    for character in email:
+        if character == "@":
+            email_valid = True
+            break
+        else:
+            x += 1
+    if x ==  character:
+        print("Not a valid email address!")
+        email = input("Email Address: ")
+        email = email.replace(" ", "")
+        email = (email + " ")
+print("Hello,",email[:x] +"!")
 
 
 '''
 TEXT FORMATTING:
 3.) Make following program output the following:
      
-     Score:          41,237
+     Score:           41,237
      High score:  1,023,407
      
      Do not use any plus sign (+) in your code.
@@ -33,7 +57,9 @@ TEXT FORMATTING:
      '''
 score = 41237
 highscore = 1023407
-print("Score:      " + str(score) )
-print("High score: " + str(highscore) )
+score = f"{score:,}"
+highscore = f"{highscore:,}"
+print("Score:                 " + str(score) )
+print("High score:  " + str(highscore) )
 
 
