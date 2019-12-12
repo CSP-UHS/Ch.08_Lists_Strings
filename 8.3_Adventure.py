@@ -116,7 +116,6 @@ while done == False:
             if an.lower() == "yes" or an.lower() == "y":
                 print("You place the head into your inventory")
                 inventory.append(head)
-                print(inventory)
             if an.lower() == "no" or an.lower() == "n":
                 print("you slam the lid and leave the severed head in the piano")
         if an.lower() == "coach" or an.lower() == "c":
@@ -153,6 +152,8 @@ while done == False:
                 print("you have successfully put the feet in your inventory.")
     direction = input("What direction would you like to go? N, E, S, W, open your inventory or quit: ")
     print()
+    if direction.lower() == "inventory" or direction.lower() == "i":
+        print(inventory)
     if direction.lower() == "north" or direction.lower() == "n":
         next_room = room_list[current_room][1]
         if next_room == None:
