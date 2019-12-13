@@ -32,17 +32,38 @@ room_list.append(room)
 while not done:
     print()
     print(room_list[current_room][0])
-    An=input("Please enter N,E,S,W,Q to move to the next room in that direction")
-    if An = "N" or An = "n":
+    an=input("Please enter N,E,S,W to move to the next room in that direction or Q to quit")
+    if an.upper() == "N" or an.lower() == "north":
+        next_room=room_list[current_room][1]
+        if next_room==None:
+            print("You can't go that way")
+        else:
+            current_room=next_room
+    elif an.upper() == "E" or an.lower() == "east":
         next_room=room_list[current_room][2]
         if next_room==None:
             print("You can't go that way")
         else:
             current_room=next_room
-    elif An = "E" or An = "e":
-        next_room=room_list[current_room][0]
+    elif an.upper() == "S" or an.lower() == "south":
+        next_room=room_list[current_room][3]
         if next_room==None:
             print("You can't go that way")
         else:
             current_room=next_room
-#start on number 13 and fix the elif with what room there next one would be and comment what things are doing
+    elif an.upper() == "W" or an.lower() == "west":
+        next_room=room_list[current_room][4]
+        if next_room==None:
+            print("You can't go that way")
+        else:
+            current_room=next_room
+    elif an.upper() == "Q" or an.lower() == "quit":
+        print("Thanks for playing!")
+        done=True
+    else:
+        print("Thats not an option try again")
+
+
+#comment what things are doing
+#add a serch function
+#add if you get the key you can excape out the living room and you win
