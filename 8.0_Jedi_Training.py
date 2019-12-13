@@ -1,4 +1,4 @@
-#Sign your name:________________
+#Sign your name: Peggy Barley
 
 '''
 1.)
@@ -9,10 +9,24 @@ Also, a common mistake is to calculate the average each time through the loop
 to add the numbers. Finish adding the numbers before you divide.
 '''
 
-# a_list = [3,12,3,5,3,4,6,8,5,3,5,6,3,2,4]
-# b_list = [4,15,2,7,8,3,1,10,9]
-# c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
+a_list = [3, 12, 3, 5, 3, 4, 6, 8, 5, 3, 5, 6, 3, 2, 4]
+b_list = [4, 15, 2, 7, 8, 3, 1, 10, 9]
+c_list = [5, 10, 13, 12, 5, 9, 2, 6, 1, 8, 8, 9, 11, 13, 14, 8, 2, 2, 6, 3, 9, 8, 10]
+total = 0
+avList = []
+done = False
 
+print()
+print("Welcome to Peggy's list program!")
+
+while not done:
+print("Which list would you like to select?")
+uChoice = input(int("1. List A \n 2. List B \n 3. List C"))
+print()
+if uChoice == 1:
+    uChoice = a_list
+else:
+    print("Invalid choice please try again.")
 
 
 '''
@@ -41,9 +55,9 @@ TEXT FORMATTING:
      You should only have two double quotes in each print statement.
  '''
 
-score = 41237
-highScore = 1023407
-print(f"Score:      {score:>9}")
-print(f"High score: {highScore:>9}")
+# score = 41237
+# highScore = 1023407
+# print(f"Score:      {score:>9}")
+# print(f"High score: {highScore:>9}")
 
 
