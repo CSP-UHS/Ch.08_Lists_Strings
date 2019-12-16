@@ -13,20 +13,33 @@ a_list = [3, 12, 3, 5, 3, 4, 6, 8, 5, 3, 5, 6, 3, 2, 4]
 b_list = [4, 15, 2, 7, 8, 3, 1, 10, 9]
 c_list = [5, 10, 13, 12, 5, 9, 2, 6, 1, 8, 8, 9, 11, 13, 14, 8, 2, 2, 6, 3, 9, 8, 10]
 total = 0
-avList = []
+it = 0
 done = False
-
 print()
 print("Welcome to Peggy's list program!")
 
 while not done:
-print("Which list would you like to select?")
-uChoice = input(int("1. List A \n 2. List B \n 3. List C"))
+    print("Which list would you like to select?")
+    uChoice = int(input("1. List A \n 2. List B \n 3. List C"))
+    print()
+    if uChoice == 1:
+        uChoice = a_list
+        done = True
+    elif uChoice == 2:
+        uChoice = b_list
+        done = True
+    elif uChoice == 3:
+        uChoice = c_list
+        done = True
+    else:
+        print("Invalid choice please try again.")
+        continue
+
+for item in uChoice:
+    total += item
+
 print()
-if uChoice == 1:
-    uChoice = a_list
-else:
-    print("Invalid choice please try again.")
+print("The average of your selected list is: ", total/len(uChoice))
 
 
 '''
