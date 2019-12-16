@@ -11,9 +11,9 @@ room_list=[]
 current_room=0
 done=False
 #ask if they would like to search in each room
-room=["You enter the doorway into a room with a couch, a t.v., and a fire place.",2,None,None,None] # room 0, will find a lighter
+room=["You enter the doorway into a room with a couch, a t.v., and a fire place.",2,None,None,None]
 room_list.append(room)
-room=["You enter the Kitchen you see counters and a sink.",4,2,None,None]#room 1, find a knife
+room=["You enter the Kitchen you see counters and a sink.",4,2,None,None]
 room_list.append(room)
 room=["You enter the south hallway you see lots of doors.",5,3,0,1]#room2
 room_list.append(room)
@@ -62,8 +62,23 @@ while not done:
         done=True
     else:
         print("Thats not an option try again")
-
+    if current_room == 1:
+        item = input("Would you like to search the room? Y for yes and N for no")
+        if item.upper()=="Y"
+            print("You found a Knife but no key")
+    if current_room == 3:
+        item = input("Would you like to search the room? Y for yes and N for no")
+        if item.upper()=="Y"
+            print("You found a toothbrush and mouthwash but no key")
+    if current_room == 4:
+        item = input("Would you like to search the room? Y for yes and N for no")
+        if item.upper()=="Y"
+            print("You found a candle stick but no key")
+    if current_room == 5:
+        item = input("Would you like to search the room? Y for yes and N for no")
+        if item.upper()=="Y"
+            print("You found the key in ...")#finnish
 
 #comment what things are doing
-#add a serch function
+#add a serch function input and make an inventory
 #add if you get the key you can excape out the living room and you win
