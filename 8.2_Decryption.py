@@ -9,15 +9,12 @@ your program 40 times. Use a FOR loop from -20 to +20 to generate all the possib
 Secret Message: Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q)x~*
 '''
 
-encrypted_mesedge = str(input("What do you want to decrypt?"))
-decrypted_mesedge_list = []
+encrypted_mesedge = "Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q)x~*"
 
-for cycle_count in range(-20,21):
-    encryped_mesedge_converted  = ord(encrypted_mesedge)
-
-
-
-
-
-
-
+decrypted_text = ""
+for c in encrypted_mesedge:
+    x = ord(c)
+    x = x+1
+    c2 = chr(x)
+    decrypted_text = decrypted_text + c2
+print(decrypted_text)
