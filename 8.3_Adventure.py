@@ -10,13 +10,14 @@ ADVENTURE PROGRAM
 # Murderer, Weapon, Place
 room_list = []
 
-room = ["\nWelcome to the front porch Detective. You have finally made it! We need you to look at the body quickly! Go find the corpse.", 1, None, None, None]
+room = ["You wake up in a strange place. Your only exit is locked. Find a way out and escape."
+    , 1, None, None, None]
 room_list.append(room)
 
 room = ["You walk into the Ballroom, the walls are a bright gold. A grand piano sits on the left side of the room and a rose couch on the right.", None, 9, 0, 2]
 room_list.append(room)
 
-room = ["You are now in the Conservatory, its a quiet room. There are some plants and a small desk. You'll be suprised what you'll find if you look around. ", 3, None, 2, None]
+room = ["The Conservatory, its a quiet room. There are some plants and a small desk. You'll be suprised what you'll find if you look around. ", 3, None, 2, None]
 room_list.append(room)
 
 room = ["You are now in the Billard's room, nothing here but a pool table.", 4, None, 2, None]
@@ -28,7 +29,7 @@ room_list.append(room)
 room = ["The Study is peaceful, looking around you see a purple couch with a desk and a lamp. ", None, 6, 4, None]
 room_list.append(room)
 
-room = ["You are now in the Hall, nothing here but a small round table in the middle of the room. The wall are a bland cream, and floor is wooden. nothing here", None, 7, None, 5]   #
+room = ["In the Hall, nothing here but a small round table in the middle of the room. The wall are a bland cream, and floor is wooden. nothing here", None, 7, None, 5]   #
 room_list.append(room)
 
 room = ["You are now in the Lounge, Green couches line the room. The wall's are a bland color but the carpet is a bold blue", None, None, 8, 6]
@@ -223,7 +224,7 @@ while done == False:
             print("You cant go that way")
         else:
             current_room = next_room
-    if inventory == 4:
+    if len(inventory) == 4:
         print("you hear a commotion in the house, all the light's flicker on and off.")
         print("A trail appears of blood leading to the kitchen")
         print("The dead body is now complete. What does this mean")
@@ -234,6 +235,14 @@ while done == False:
         inventory.remove("legs")
         inventory.remove("arms")
         print("Find the passage")
+    if len(inventory) == 4 and current_room == 1:
+        an = input("Another door has appeared in the current room...do you want to look inside? yes or no: ")
+        if an.lower() == "yes" or "y":
+            print("you walk into the room there is nothing but a operating table and tools.")
+            print("written in blood is You're next")
+            print("the lights turn off and the exit slammed shut")
+        if an.lower() == "no" or "n":
+            print("You have made the wrong decision. Try again")
     if direction.lower() == "q":
         done = True
 
