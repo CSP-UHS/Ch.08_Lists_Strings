@@ -42,3 +42,7 @@ TEXT FORMATTING:
      You should only have two double quotes in each print statement.
      '''
 
+Score = 41237                                  #left off here
+HighScore = 1023407
+
+print(f"{Score:0>2d}")
