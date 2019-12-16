@@ -11,10 +11,11 @@ Secret Message: Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q
 
 encrypted_mesedge = "Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q)x~*"
 
-decrypted_text = ""
-for c in encrypted_mesedge:
-    x = ord(c)
-    x = x+1
-    c2 = chr(x)
-    decrypted_text = decrypted_text + c2
-print(decrypted_text)
+for i in range(-20,21):
+    decrypted_text = ""
+    for curent_letter in encrypted_mesedge:
+        ascii_number = ord(curent_letter)
+        new_ascii_number = ascii_number + i
+        converted_letter = chr(new_ascii_number)
+        decrypted_text += converted_letter
+    print(decrypted_text)
