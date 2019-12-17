@@ -42,7 +42,8 @@ TEXT FORMATTING:
      You should only have two double quotes in each print statement.
      '''
 
-Score = 41237                                  #left off here
+Score = 41237
 HighScore = 1023407
 
-print(f"{Score:0>2d}")
+print("Score:           ", f"{ Score:,}")
+print("High score:  ", f"{ HighScore:,}")
