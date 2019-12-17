@@ -45,6 +45,7 @@ current_room = 0
 
 inventory = []
 
+key = 1 # in front room
 head = 1 # in the ballroom
 feet = 1 # Dining room
 legs = 1 # HALL
@@ -227,19 +228,24 @@ while done == False:
         print("A trail appears of blood leading to the kitchen")
         print("the dead body is now whole again. What does this mean")
         print()
-        print("A secret passage has been opened")
+        print("A secret passage has been opened somewhere in the house")
         inventory.remove("head")
         inventory.remove("feet")
         inventory.remove("legs")
         inventory.remove("arms")
         print("Find the passage")
-    if len(inventory) == 4 and current_room == 1:
+    if current_room == 0:
+        an = input("Would you like to take a look around? yes or no? :")
+        if an.lower() == "yes" or an.lower() == "y":
+            print("you find a golden key in the middle of the room")
+            inventory+=key
+    if len(inventory) == key and current_room == 4:
         an = input("Another door has appeared in the current room...do you want to look inside? yes or no: ")
-        if an.lower() == "yes" or "y":
+        if an.lower() == "yes" or an.lower() == "y":
             print("you walk into the room there is nothing but a operating table and tools.")
             print("written in blood is You're next")
             print("the lights turn off and the exit slammed shut")
-        if an.lower() == "no" or "n":
+        if an.lower() == "no" or an.lower() == "n":
             print("You have made the wrong decision. Try again")
     if direction.lower() == "q":
         done = True
