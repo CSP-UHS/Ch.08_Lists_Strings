@@ -21,15 +21,3 @@ for change in range(-20, 20):
 
 
 
-# print()
-# for item in secretMessage:
-#     ad = ord(item)
-#     asciiList.append(ad)
-# while applied == 20:
-#     for item in asciiList:
-#         item += applied
-#         od = chr(item)
-#         decryption
-
-
-

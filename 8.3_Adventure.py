@@ -8,4 +8,6 @@ ADVENTURE PROGRAM
 '''
 
 room_list= []
-room=["Welcome to the __"]
+room = ["Welcome to the foyer.", 4, ]
+
+room.append(room_list)
