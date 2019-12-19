@@ -62,9 +62,9 @@ TEXT FORMATTING:
      You should only have two double quotes in each print statement.
  '''
 
-# score = 41237
-# highScore = 1023407
-# print(f"Score:      {score:>9}")
-# print(f"High score: {highScore:>9}")
+score = 41237
+highScore = 1023407
+print(f"Score:      {score:>9,}")
+print(f"High score: {highScore:>9,}")
 
 
