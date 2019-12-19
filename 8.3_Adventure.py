@@ -6,7 +6,7 @@ ADVENTURE PROGRAM
 3.) Expand your program to make it a real adventure game
 
 '''
-print("Welcome to my game, here you will try to excape the house through the livingroom door but first you will have to find the key")
+print("Welcome to my game, here you will try to excape the house by finding the key")
 room_list=[]
 current_room=0
 done=False
@@ -32,7 +32,7 @@ room_list.append(room)
 while not done:
     print()
     print(room_list[current_room][0])
-    an=input("Please enter N,E,S,W to move to the next room in that direction or Q to quit")
+    an=input("Please enter N,E,S,W to move to the next room in that direction or Q to quit")#movement
     if an.upper() == "N" or an.lower() == "north":
         next_room=room_list[current_room][1]
         if next_room==None:
@@ -63,22 +63,45 @@ while not done:
     else:
         print("Thats not an option try again")
     if current_room == 1:
-        item = input("Would you like to search the room? Y for yes and N for no")
-        if item.upper()=="Y"
+        item = input("You have entered the Kitchen. Would you like to search? Y for yes and N for no")# search functions
+        if item.upper()=="Y":
             print("You found a Knife but no key")
+        else:
+            continue
     if current_room == 3:
-        item = input("Would you like to search the room? Y for yes and N for no")
-        if item.upper()=="Y"
+        item = input("You have entered the Bathroom. Would you like to search? Y for yes and N for no")
+        if item.upper()=="Y":
             print("You found a toothbrush and mouthwash but no key")
+        else:
+            continue
     if current_room == 4:
-        item = input("Would you like to search the room? Y for yes and N for no")
-        if item.upper()=="Y"
+        item = input("You have entered the Dinning room. Would you like to search? Y for yes and N for no")
+        if item.upper()=="Y":
             print("You found a candle stick but no key")
+        else:
+            continue
     if current_room == 5:
-        item = input("Would you like to search the room? Y for yes and N for no")
-        if item.upper()=="Y"
-            print("You found the key in ...")#finnish
-
-#comment what things are doing
-#add a serch function input and make an inventory
-#add if you get the key you can excape out the living room and you win
+        item = input("You have entered the End of the Hallway. Would you like to search? Y for yes and N for no")
+        if item.upper()=="Y":
+            print("You found water in the vase")
+        else:
+            continue
+    if current_room == 6:
+        item = input("You have entered the Extra Bedroom. Would you like to search? Y for yes and N for no")
+        if item.upper() == "Y":
+            print("You found a notebook in the dresser, it reads ~You Will NEVER escape~")
+        else:
+            continue
+    if current_room ==7:
+        item = input("You have entered the Master Bedroom. Would you like to search? Y for yes and N for no")
+        if item.upper() == "Y":
+            print("You found an alarm clock")
+        else:
+            continue
+    if current_room ==8:
+        item = input("You have entered the Master Bathroom. Would you like to search? Y for yes and N for no")
+        if item.upper() == "Y":
+            print("You found a key behind the mirror in a bottle!\n You Won! Congradulations!")
+            done=True
+        else:
+            continue
