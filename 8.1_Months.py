@@ -10,8 +10,9 @@ months = "JanFebMarAprMayJunJulAugSepOctNovDec"
 
 '''
 months = "JanFebMarAprMayJunJulAugSepOctNovDec"
+
 while True:
-    userInput=int(input("Pick a month number 1-12: "))
+    userInput=int(input("Pick a month number (1-12): "))
     if userInput<1 or userInput>12:
         break
     end=userInput*3
