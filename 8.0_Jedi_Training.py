@@ -67,4 +67,3 @@ highScore = 1023407
 print(f"Score:      {score:>9,}")
 print(f"High score: {highScore:>9,}")
 
-
