@@ -73,7 +73,7 @@ while done == False:
                 print(room_list[current_room][0])
             else:
                 print("sorry that's not an option")
-        if an.lower() == "no" or an.lower() == "n":
+        elif an.lower() == "no" or an.lower() == "n":
             print("\nYou walk away from the couch, its not worth it. What was that old saying again.\n")
             print("O-h, curiosity killed the cat. Its best left untouched.")
         else:
@@ -94,7 +94,7 @@ while done == False:
                 print("You walk away")
             else:
                 print("sorry that's not an option")
-        if an.lower() == "no" or an.lower() == "n":
+        elif an.lower() == "no" or an.lower() == "n":
             print("\nYou walk away from the door, its not worth it besides Curiosity killed the cat. Best left untouched.\n")
         else:
             print("sorry that's not an option")
@@ -113,7 +113,7 @@ while done == False:
                 print("You walk away")
             else:
                 print("sorry that's not an option")
-        if an.lower() == "no" or an.lower() == "n":
+        elif an.lower() == "no" or an.lower() == "n":
             print("\nYou walk away from the trap. Its not worth it besides Curiosity killed the cat.\n")
         else:
             print("sorry that's not an option")
@@ -269,8 +269,8 @@ while done == False:
         an = input("Another door has appeared in the current room...do you want to look inside? yes or no: ")
         if an.lower() == "yes" or an.lower() == "y":
             print("you walk into the room there is nothing but a operating table and tools.")
-            print("written in blood is You're next")
-            print("the lights turn off and the exit slammed shut")
+            print("written in blood on the wall is You're next")
+            print("the lights turn off and the exit is slammed shut")
             done = True
         if an.lower() == "no" or an.lower() == "n":
             print("You have made the wrong decision. Try again")
