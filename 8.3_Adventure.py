@@ -9,8 +9,8 @@ ADVENTURE PROGRAM
 # Murderer, Weapon, Place
 room_list = []
 
-room = ["\nYou wake up in a strange place. Your only exit is locked. Find a way out and escape. You realize that you're in the Front room.\n"
-        "There is a note on the door. 'Find all the body parts to complete my master piece', the note states cursive.", 1, None, None, None]
+room = ["\nYou wake up in a strange place. Your only exit is locked. You need to find a way out and escape. You realize that you're in the Front room.\n"
+        "There is a note on the door 'Find all the body parts to complete my master piece'.", 1, None, None, None]
 room_list.append(room)
 
 room = ["You walk into the Ballroom, the walls are a bright gold. A grand piano sits on the left side of the room and a rose couch on the right.", None, 9, 0, 2]
@@ -56,6 +56,7 @@ legs = False
 arms = 1 # BILLARD ROOM
 arms = False
 done = False
+fullbody = False
 
 while done == False:
     print(room_list[current_room][0])
@@ -258,8 +259,9 @@ while done == False:
         inventory.remove("feet")
         inventory.remove("legs")
         inventory.remove("arms")
+        fullbody = True
         print("Find the passage")
-    if current_room == 0 and turn > 3:
+    if current_room == 0 and fullbody == True:
         an = input("Would you like to take a look around? yes or no? :")
         if an.lower() == "yes" or an.lower() == "y":
             print("you find a golden key in the middle of the room\n")
@@ -276,4 +278,3 @@ while done == False:
             print("You have made the wrong decision. Try again")
     if direction.lower() == "q":
         done = True
-
