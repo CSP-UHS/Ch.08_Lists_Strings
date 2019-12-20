@@ -9,8 +9,8 @@ ADVENTURE PROGRAM
 # Murderer, Weapon, Place
 room_list = []
 
-room = ["You wake up in a strange place. Your only exit is locked. Find a way out and escape. You realize that you're in the Front room.\n"
-        " There is a note on the door. 'Find all the body parts to complete my master piece', the note states cursive.", 1, None, None, None]
+room = ["\nYou wake up in a strange place. Your only exit is locked. Find a way out and escape. You realize that you're in the Front room.\n"
+        "There is a note on the door. 'Find all the body parts to complete my master piece', the note states cursive.", 1, None, None, None]
 room_list.append(room)
 
 room = ["You walk into the Ballroom, the walls are a bright gold. A grand piano sits on the left side of the room and a rose couch on the right.", None, 9, 0, 2]
@@ -44,7 +44,7 @@ room_list.append(room)
 current_room = 0
 
 inventory = []
-
+turn = 0
 key = 1 # in front room
 key = False
 head = 1 # in the ballroom
@@ -221,24 +221,28 @@ while done == False:
         print(inventory)
     if direction.lower() == "north" or direction.lower() == "n":
         next_room = room_list[current_room][1]
+        turn+=1
         if next_room == None:
             print("You cant go that way")
         else:
             current_room = next_room
     elif direction.lower() == "east" or direction.lower() == "e":
         next_room = room_list[current_room][2]
+        turn += 1
         if next_room == None:
             print("You cant go that way")
         else:
             current_room = next_room
     elif direction.lower() == "south" or direction.lower() == "s":
         next_room = room_list[current_room][3]
+        turn += 1
         if next_room == None:
             print("You cant go that way")
         else:
             current_room = next_room
     elif direction.lower() == "west" or direction.lower() == "w":
         next_room = room_list[current_room][4]
+        turn += 1
         if next_room == None:
             print("You cant go that way")
         else:
@@ -255,7 +259,7 @@ while done == False:
         inventory.remove("legs")
         inventory.remove("arms")
         print("Find the passage")
-    if current_room == 0:
+    if current_room == 0 and turn > 3:
         an = input("Would you like to take a look around? yes or no? :")
         if an.lower() == "yes" or an.lower() == "y":
             print("you find a golden key in the middle of the room\n")
