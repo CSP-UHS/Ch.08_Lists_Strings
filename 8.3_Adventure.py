@@ -6,7 +6,7 @@ ADVENTURE PROGRAM
 3.) Expand your program to make it a real adventure game
 
 '''
-print("Welcome to my game, here you will try to excape the house by finding the key")
+print("Welcome to my game, here you will try to excape the house by finding the key. \n You woke up in the living room. \n Its dark outside, you have a flashlight, \n You found a note telling you that if you find the key you can open the door to escape.")
 room_list=[]
 current_room=0
 done=False
@@ -32,7 +32,7 @@ room_list.append(room)
 while not done:
     print()
     print(room_list[current_room][0])
-    an=input("Please enter N,E,S,W to move to the next room in that direction or Q to quit")#movement
+    an=input("Please enter N,E,S,W to move to the next room in that direction or Q to quit\n")#movement
     if an.upper() == "N" or an.lower() == "north":
         next_room=room_list[current_room][1]
         if next_room==None:
@@ -101,7 +101,7 @@ while not done:
     if current_room ==8:
         item = input("You have entered the Master Bathroom. Would you like to search? Y for yes and N for no")
         if item.upper() == "Y":
-            print("You found a key behind the mirror in a bottle!\n You Won! Congradulations!")
+            print("You found a key behind the mirror in a bottle!\n You Won! Congratulations!")
             done=True
         else:
             continue
