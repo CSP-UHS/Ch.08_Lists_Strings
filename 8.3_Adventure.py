@@ -33,7 +33,6 @@ room = ["Welcome to the library.", None, None, 5, 7] #Library
 room_list.append(room)
 ##  End of appending to room_list
 
-print("Pr")
 
 player_name = input("What is your name? >   ") #player name
 print(player_name.center(40), "\n")
@@ -53,7 +52,7 @@ while not done:
              current_room = next_room
 
     elif direction.lower() == "east" or direction.lower() == "e":
-        next_room = room_list[current_room   ][2]
+        next_room = room_list[current_room][2]
         if next_room == None:
             print("You can't go that way")
         else:
@@ -91,4 +90,7 @@ while not done:
             while not done:
                  invest = input("Would you like to check under the mat or behind the painting? Type 'none' if you do not want to do investigate.")
                  if invest.lower == "mat":
-                   print("There is a letter ")
+                   print("There is a letter that stesfshdfiuhsdfojdsfsfij ")
+
+
+
