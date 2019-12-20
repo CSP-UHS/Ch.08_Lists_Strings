@@ -90,7 +90,7 @@ while not done:
             while not done:
                  invest = input("Would you like to check under the mat or behind the painting? Type 'none' if you do not want to do investigate.")
                  if invest.lower == "mat":
-                   print("There is a letter that stesfshdfiuhsdfojdsfsfij ")
+                   print(" ")
 
 
 
