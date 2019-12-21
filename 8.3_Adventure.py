@@ -25,7 +25,7 @@ room_list.append(room)
 room = ["In the Library, a table sits in the middle of the room. The walls are lined with books", 5, None, 4, None]
 room_list.append(room)
 
-room = ["The Study is peaceful, looking around you see a purple couch with a desk and a lamp. ", None, 6, 4, None]
+room = ["The Study is peaceful, looking around you see a purple couch. ", None, 6, 4, None]
 room_list.append(room)
 
 room = ["You are now in the Hall, there is nothing but a small round table. The walls are a cream, the floor wooden.", None, 7, None, 5]   #
