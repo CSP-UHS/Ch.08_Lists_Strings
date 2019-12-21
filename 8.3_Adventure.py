@@ -272,12 +272,12 @@ while done == False:
         an = input("Would you like to take a look around? yes or no? :")
         if an.lower() == "yes" or an.lower() == "y":
             print("you find a golden key in the middle of the room\n")
-            inventory.append("Key")
+            inventory.append("key")
             key = True
     if key == True and current_room == 4:
         an = input("Another door has appeared in your current room...do you want to look inside? yes or no: ")
         if an.lower() == "yes" or an.lower() == "y":
-            print("you walk into the room, there is nothing but a operating table and surgical tools.")
+            print("\nyou walk into the room, there is nothing but a operating table and surgical tools.")
             print("The floor is blue and white patterned tile while the walls are a dull grey")
             print("A drain with dried blood sits below the operating table")
             print("Written in blood on the wall is 'You're next'")
