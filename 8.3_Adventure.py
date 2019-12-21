@@ -205,20 +205,21 @@ while done == False:
         an = input("would you like to inspect the dining room table, yes or no? :")
         if an.lower() == "yes" or an.lower() == "y":
             if feet == False:
-                print("You walk up to the table...you smell blood")
+                print("You walk up to the table and smell blood")
                 print("You see two feet tied together by a red ribbon...who would do such a thing.")
-                an = input("would you like to place the severed feet in your inventory? :")
+                an = input("would you like to place the feet in your inventory? :")
                 if an.lower() == "yes" or an.lower() == "y":
                     inventory.append("feet")
+                    feet = True
                     print("you have successfully put the feet in your inventory.")
                 elif an.lower() == "no" or an.lower() == "n":
-                    print("you run away from the table")
+                    print("you run away from the table and don't look back")
                 else:
                     print("sorry that's not an option")
             else:
                 print("nothing seems out of place")
         elif an.lower() == "no" or an.lower() == "n":
-            print("you run away from the table")
+            print("you walk away from the table")
         else:
             print("sorry that's not an option")
             ##########################################
@@ -257,7 +258,7 @@ while done == False:
     if len(inventory) == 4:
         print("You hear a commotion in the house, all the light's flicker on and off.")
         print("A trail of blood appears leading to the kitchen")
-        print("the dead body is now complete. What does this mean")
+        print("the body is now complete. What does this mean")
         print()
         print("A secret passage has been opened somewhere in the house")
         print("Find the key to open the door")
@@ -277,9 +278,11 @@ while done == False:
         an = input("Another door has appeared in your current room...do you want to look inside? yes or no: ")
         if an.lower() == "yes" or an.lower() == "y":
             print("you walk into the room, there is nothing but a operating table and surgical tools.")
-            print("written in blood on the wall is You're next")
-            print("the lights turn off and the exit is slammed shut")
+            print("The floor is blue and white patterned tile while the walls are a dull grey")
+            print("A drain with dried blood sits below the operating table")
+            print("Written in blood on the wall is 'You're next'")
             done = True
+            inventory.remove("key")
         if an.lower() == "no" or an.lower() == "n":
             print("You have made the Wrong decision. Try again")
     if direction.lower() == "q":
