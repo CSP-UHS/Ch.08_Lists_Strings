@@ -9,7 +9,7 @@ ADVENTURE PROGRAM
 # Murderer, Weapon, Place
 room_list = []
 
-room = ["\nYou wake up in a strange place. Your only exit is locked. You need to find a way out and escape. You realize that you're in the Front room.\n"
+room = ["You wake up in a strange place. Your only exit is locked. You need to find a way out and escape. You realize that you're in the Front room."
         "There is a note on the door 'Find all the body parts to complete my masterpiece'.", 1, None, None, None]
 room_list.append(room)
 
@@ -19,7 +19,7 @@ room_list.append(room)
 room = ["The Conservatory is a quiet room, with plants and a small desk. You'll be surprised what you'll find if you look around. ", 3, 1, None, None]
 room_list.append(room)
 
-room = ["You are now in the Billard's room. A pool table stands in the room.", 4, None, 2, None]
+room = ["You are now in the Billards room. A pool table stands in the room.", 4, None, 2, None]
 room_list.append(room)
 
 room = ["In the Library, a table sits in the middle of the room. The walls are lined with books", 5, None, 4, None]
@@ -65,7 +65,8 @@ while done == False:
         an = input("would you like to inspect the couch? Yes or No : ")
         if an.lower() == "yes" or an.lower() == "y":
             print("You walk over to the couch, and look around for any imperfections. You can find none, you almost walk away but somthing catches your eye.")
-            print("Scuff marks line the floor. You push the couch away from the wall and see a secret entrance.\n")
+            print("Scuff marks line the floor. You push the couch away from the wall and see a secret entrance.")
+            print()
             an = input("Would you like to go in the passage? Yes or No : ")
             if an.lower() == "yes" or an.lower() == "y":
                 print("You open the secret entrance and walk in. no light reaches the tunnel, you feel along the wall until you hit another door")
@@ -77,8 +78,9 @@ while done == False:
             else:
                 print("sorry that's not an option")
         elif an.lower() == "no" or an.lower() == "n":
-            print("\nYou walk away from the couch, and push it back into its original place.")
-            print("Its not worth it. What was that old saying again.\n")
+            print()
+            print("You walk away from the couch, and push it back into its original place.")
+            print("Its not worth it. What was that old saying again.")
             print("O-h, curiosity killed the cat.")
         else:
             print("sorry that is not an option")
@@ -88,7 +90,8 @@ while done == False:
         if an.lower() == "yes" or an.lower() == "y":
             print("You touch every spine but one stands out. You pull on it and a shelf slides out of the wall")
             print("A wooden door appears, but where does it lead?")
-            an = input("\nWould you like to go in the passage? Yes or No : ")
+            print()
+            an = input("Would you like to go in the passage? Yes or No : ")
             if an.lower() == "yes" or an.lower() == "y":
                 print("You walk in the tunnel until you find another door")
                 print("Huh that's unusual, you're in the Kitchen.")
@@ -99,7 +102,8 @@ while done == False:
             else:
                 print("sorry that's not an option")
         elif an.lower() == "no" or an.lower() == "n":
-            print("\nYou walk away from the door, its not worth it.\n")
+            print()
+            print("You walk away from the door, its not worth it.")
         else:
             print("sorry that is not an option")
             ##########################################
@@ -108,7 +112,8 @@ while done == False:
         if an.lower() == "yes" or an.lower() == "y":
             print("You move the couch and find a secret entrance")
             print("There is a small wooden door, where does it lead?")
-            an = input("\nWould you like to go in the passage? Yes or No : ")
+            print()
+            an = input("Would you like to go in the passage? Yes or No : ")
             if an.lower() == "yes" or an.lower() == "y":
                 print("You open the passage and walk until you find your way to the conservatory")
                 current_room = 2
@@ -118,7 +123,8 @@ while done == False:
             else:
                 print("sorry that's not an option")
         elif an.lower() == "no" or an.lower() == "n":
-            print("\nYou walk away from the trap, and put the couch back into its original place.\n")
+            print()
+            print("You walk away from the trap, and put the couch back into its original place.\n")
         else:
             print("sorry that is not an option")
             ##########################################
@@ -126,25 +132,27 @@ while done == False:
         an = input("would you like to inspect the pantry? Yes or No : ")
         if an.lower() == "yes" or an.lower() == "y":
             print("You open the pantry and see a door")
-            an = input("\nWould you like to go in the passage? Yes or No : ")
+            print()
+            an = input("Would you like to go in the passage? Yes or No : ")
             if an.lower() == "yes" or an.lower() == "y":
                 print("You open the wooden door and walk until you feel a smaller door")
                 current_room = 5
                 print(" Huh that's unusual, you find yourself in the Study.")
                 print(room_list[current_room][0])
             if an.lower() == "no" or an.lower() == "n":
-                print("\nYou run away from the pantry, and close the doors. Besides its covered in blood\n")
+                print()
+                print("You run away from the pantry, and close the doors. Besides its covered in blood\n")
         elif an.lower() == "no" or an.lower() == "n":
             print("You walk away and shut the door")
         else:
             print("sorry that is not an option")
             ##########################################
     if current_room == 1: ### FIND THE HEAD in BALLROOM
-        an = input("What would you like to inspect, the piano, the couch or No?: ")
+        an = input("What would you like to inspect? p for the piano, c for the couch or No for no?: ")
         if an.lower() == "piano" or an.lower() == "p":
             if head == False:
                 print("you walk to the left side of the room, where the piano stands. There is nothing on the piano...")
-                print("You lift up the lid and find a severed head. The dead eyes stare at you, while blood runs down it's orifices.")
+                print("You lift up the lid and find a severed head. The dead eyes stare at you, while blood runs down its orifices.")
                 an = input("Would you like to place the severed head in your inventory : ")
                 if an.lower() == "yes" or an.lower() == "y":
                     print("You place the head into your inventory")
@@ -165,7 +173,7 @@ while done == False:
         an = input("Would you like to inspect the pool table? yes or no: ")
         if an.lower() == "yes" or an.lower() == "y":
             if arms == False:
-                print("You look at the pool table, nothing seems out of the order until you hit a secret panel lose.")
+                print("You look at the pool table, nothing seems out of the order until you hit a secret panel loose.")
                 print("You reach under the table and feel something squishy. You look under and scream.")
                 print("All you can see are a pair of severed arms shoved into the small panel")
                 an = input("would you like to place the arms in your inventory?: ")
@@ -223,7 +231,7 @@ while done == False:
         else:
             print("sorry that's not an option")
             ##########################################
-    direction = input("\nWhat direction would you like to go? N, E, S, W, i for inventory or q for quit: ")
+    direction = input("What direction would you like to go? N, E, S, W, i for inventory or q for quit: ")
     print()
     if direction.lower() == "inventory" or direction.lower() == "i":
         print(inventory)
@@ -277,7 +285,8 @@ while done == False:
     if key == True and current_room == 4:
         an = input("Another door has appeared in your current room...do you want to look inside? yes or no: ")
         if an.lower() == "yes" or an.lower() == "y":
-            print("\nyou walk into the room, there is nothing but a operating table and surgical tools.")
+            print()
+            print("you walk into the room, there is nothing but a operating table and surgical tools.")
             print("The floor is blue and white patterned tile while the walls are a dull grey")
             print("A drain with dried blood sits below the operating table")
             print("Written in blood on the wall is 'You're next'")
