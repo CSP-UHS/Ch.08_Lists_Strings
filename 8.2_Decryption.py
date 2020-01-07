@@ -10,4 +10,12 @@ Secret Message: Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q
 '''
 
 
+encryptedText="Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q)x~*"
+secretMessage=""
+for c in range(-20,+21):
+    x=ord(c)
+    x+=1
+    c2=chr(x)
+    secretMessage+=c2
+print(secretMessage)
 
