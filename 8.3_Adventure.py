@@ -52,14 +52,13 @@ room=["In the master bedroom there's a large four poster bed with the drapes dra
       "revealing clothes strewn about.",None,None,7,9]
 room_list.append(room)
 
-
+print()
 print("Welcome to Escape the House. In this game you will travel through house and collect items in the hopes of "
       "escaping the house. When you are asked for a direction to move answer \nN,E,S, or W. If you are asked a yes "
       "or no question you can answer with yes,no,y or n. Let's get started.")
 print()
 print("You awaken on the floor, there's a tiger head in front of you but it's just a rug. There's a wardrobe in "
       "the corner and a small bench near the door.")
-
 while done==False:
     if current_room == 1:
         print()
@@ -204,12 +203,6 @@ while done==False:
                 else:
                     current_room = room_list[var][1]
                     break
-            if direction.lower() == "e" or direction.lower() == "east":
-                if room_list[var][2] == None:
-                    print("There's no door that way.")
-                else:
-                    current_room = room_list[var][2]
-                    break
             if direction.lower() == "s" or direction.lower() == "south":
                 if room_list[var][3] == None:
                     print("There's no door that way.")
@@ -247,12 +240,6 @@ while done==False:
                 else:
                     current_room = room_list[var][3]
                     break
-            if direction.lower() == "w" or direction.lower() == "west":
-                if room_list[var][4] == None:
-                    print("There's no door that way.")
-                else:
-                    current_room = room_list[var][4]
-                    break
     if current_room == 5:
         print()
         print(room_list[current_room][0])
@@ -289,6 +276,9 @@ while done==False:
             if direction.lower() == "s" or direction.lower() == "south":
                 if room_list[var][3] == None:
                     print("There's no door that way.")
+                else:
+                    current_room = room_list[var][3]
+                    break
             if direction.lower() == "w" or direction.lower() == "west":
                 if room_list[var][4] == None:
                     print("There's no door that way.")
@@ -559,16 +549,3 @@ while done==False:
                 else:
                     current_room = room_list[var][4]
                     break
-print()
-pa=input("Would you like to play again?")
-if pa=="y" or pa=="yes":
-    print("Coolio")
-    done=False
-    wait=False
-else:
-    print("Come again soon!")
-
-
-
-
-
