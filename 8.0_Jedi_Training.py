@@ -50,7 +50,7 @@ TEXT FORMATTING:
      Do not use any plus sign (+) in your code.
      You should only have two double quotes in each print statement.
 '''
-score = 41237
+score = 41236
 highscore = 1023407
 print("Score:      ", f"{score:,}")
 print("High score: ", f"{highscore:,}")

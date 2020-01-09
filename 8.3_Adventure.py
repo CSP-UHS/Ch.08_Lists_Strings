@@ -12,7 +12,7 @@ room=["You exit to the outside porch. You take a deep breath and walk home.",1,N
 room_list.append(room)
 
 #First Floor
-room=["The tiger rug is staring at you, there's a wardrobe and a small bench in the corner.",4,6,0,2]
+room=["In the entryway the tiger rug is staring at you, there's a wardrobe and a small bench in the corner.",4,6,0,2]
 room_list.append(room)
 
 room=["You enter the living room. A large couch dominates the center of the room and the T.V. in the corner has nothing"
@@ -61,9 +61,6 @@ print("You awaken on the floor, there's a tiger head in front of you but it's ju
       "the corner and a small bench near the door.")
 
 while done==False:
-    if current_room == 0:
-        print(room_list[current_room][0])
-        print("Congratulations you have escaped")
     if current_room == 1:
         print()
         print(room_list[current_room][0])
@@ -103,6 +100,7 @@ while done==False:
                 else:
                     if Fkey==1:
                         print("Congratulations, you've won")
+                        print("You transcend to the next life.")
                         done=True
                         break
                     else:
