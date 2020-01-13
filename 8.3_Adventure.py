@@ -6,16 +6,18 @@ ADVENTURE PROGRAM
 3.) Expand your program to make it a real adventure game
 
 '''
-print("Welcome to the Escape House! There is only way one that you exit the house: through the back living room.")
+print() #introduction/directions
+print("Welcome to the Escape House! The only way that you can escape is through the back living room.")
+print("In order to leave the house, you must have a key. It is hidden in one of 8 rooms in the house.")
 print()
-print("In order to leave the house, you must have a key. It is hidden in one of 7 rooms in the house.")
-print()
+print("Be careful during your adventure as searching for the key is dangerous.")
 print("You must enter through the porch and use the key to exit the living room in order to win!")
-print("If you are caught by the parents, or a child you lose!")
+print()
+print("There is a family in the house. If you are caught by the parents or a child, you lose!")
 print()
 print("Good luck escaping!")
 
-room_list=[]
+room_list=[] #name of rooms
 room=["You enter the porch. There is nothing there to search for.",2,None,None,None]
 room_list.append(room)
 room=["You enter the dining room.",4,2,None,None]
@@ -70,27 +72,27 @@ while not done:
     else:
         print("I do not understand.")
     if current_room == 1:
-        search = input("Would you like to search the dining room?")
+        search = input("Would you like to search the dining room? ")
         print()
         if search.upper() == "Y" or search.upper() == "YES":
-            print("You found a tablecloth, but no key under it.")
+            print("You found a tablecloth, but there is no key under it.")
             print("You found a couple of old plates, but no key. Keep looking around!")
             print()
     if current_room == 2:
-        search = input("Would you like to search the kitchen?")
+        search = input("Would you like to search the kitchen? ")
         print()
         if search.upper() == "Y" or search.upper() == "YES":
             print("All of the appliances are locked. There is also nothing under them.")
             print("You should look somewhere else!")
             print()
     if current_room == 3:
-        search == input("Would you like to search the office?")
+        search = input("Would you like to search the office? ")
         print()
         if search.upper() == "Y" or search.upper() == "YES":
-            print("You found the key, but it is not the right one. Keep searching!")
+            print("You found a key, but it is not the right one. Keep searching!")
             print()
     if current_room == 4:
-        search = input("Would you like to search the master bedroom?")
+        search = input("Would you like to search the master bedroom? ")
         print()
         if search.upper() == "Y" or search.upper() == "YES":
             print("Sorry, you were caught by the father while you were searching.")
@@ -98,11 +100,11 @@ while not done:
             print()
             done = True
     if current_room == 5:
-        search = input("Would you like to search the bathroom?")
+        search = input("Would you like to search the bathroom? ")
         print()
         if search.upper() == "Y" or search.upper() == "YES":
             print("You found something behind the mirror. It's an escape route!")
-            escape = input("Would you like to escape the house?")
+            escape = input("Would you like to escape the house? ")
             print()
             if escape.upper() == "Y" or escape.upper() == "YES":
                 print("Sorry, the 4 year-old child found you. He told his parents!")
@@ -110,13 +112,15 @@ while not done:
                 print()
                 done = True
     if current_room == 6:
-        search = input("Would you like to search the guest bedroom?")
+        search = input("Would you like to search the guest room? ")
         print()
         if search.upper() == "Y" or search.upper() == "YES":
-            print("You found the key! It's on the mother's nose though.")
-            print("She is sleeping. Be quiet and don't let her catch you if you want to grab it.")
+            print("You found the key! It is on the covers, but the mother is sleeping under them.")
+            print("Be quiet and don't let her catch you if you want to grab it.")
             print()
-            escape = int(input("Would you like to grab the key off of her nose, or would you like to make enough noise for her to turn over and release the key? 1 or 2?"))
+            print("You have two options: 1 - Grab the key off the covers carefully")
+            print("Or 2 - Tickle her nose to get her to move and knock the key off the bed")
+            escape = int(input("Option 1 or Option 2? "))
             print()
             if escape == 1:
                 print("Good decision! The mother is a deep sleeper. You didn't wake her.")
@@ -124,7 +128,7 @@ while not done:
                 print()
                 key_found+=1
             elif escape == 2:
-                print("Bad decision! The mother is a deep sleeper. You made too much noise, and the father found you!")
+                print("Bad decision! The mother is a deep sleeper. You didn't wake her, and the father found you!")
                 print("You lost. Better luck next time!")
                 print()
                 done = True
