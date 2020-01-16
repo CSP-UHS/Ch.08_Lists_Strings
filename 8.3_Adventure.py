@@ -7,17 +7,17 @@ ADVENTURE PROGRAM
 '''
 
 room_list = [] #Sets up empty room list to be added to later
-room = ("You are in the house's only entrance, but now you must try to escape!",1, None, None, None) #Doorway
+room = ("You have entered the house. From here you must get to the bunker asap. The doorroom has nothing in it.",1, None, None, None) #Doorway
 room_list.append(room) #Adds the above room to list, used for every room
-room = ("The living room has been long abandoned.",None, 2, 0, 3) #Living Room
+room = ("This living room has been long abandoned.",None, 2, 0, 3) #Living Room
 room_list.append(room)
 room = ("The sunroom is filled with dirt.",5, None, None, 1) #Sunroom
 room_list.append(room)
-room = ("The twisted hallway leads to a heavy door.",4, 1, None, None) #Hallway
+room = ("The twisted hallway leads to a heavy locked door that will require a key.",4, 1, None, None) #Hallway
 room_list.append(room)
-room = ("From the Foyer you can see the bunker north of you",6, None, 3, None) #Foyer
+room = ("As in the rest of the house, there is nothing in this room.",6, None, 3, None) #Foyer
 room_list.append(room)
-room = ("This dark room has a skeleton in the corner.",None, None, 2, None) #Darkroom
+room = ("This dark room has a skeleton in the corner, its mouth appears to be holding something.",None, None, 2, None) #Darkroom
 room_list.append(room)
 room = ("Congratulations, you reached the bunker and are now safe!",None, None, 4, None) #Bunker
 room_list.append(room)
