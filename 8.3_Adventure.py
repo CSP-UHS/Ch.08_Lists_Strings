@@ -17,15 +17,16 @@ room = ("The twisted hallway leads to a heavy door.",4, 1, None, None) #Hallway
 room_list.append(room)
 room = ("From the Foyer you can see the bunker north of you",6, None, 3, None) #Foyer
 room_list.append(room)
-room = ("This dark room has a skelton in the corner.",None, None, 2, None) #Darkroom
+room = ("This dark room has a skeleton in the corner.",None, None, 2, None) #Darkroom
 room_list.append(room)
 room = ("Congratulations, you reached the bunker and are now safe!",None, None, 4, None) #Bunker
 room_list.append(room)
 
-current_room = 0 #Starting Location
+current_room = 0 #Starting Location as doorway
 next_room = 0 #sets up varible for later
 done = False
 while not done: #Makes program run until stopped
+
     print()
     print(room_list[current_room][0]) #Tells player where thet curently are
     user_choice = input("Press N,E,S,W to move or Q to quit.") #Tells player how ot interact with the game
@@ -36,20 +37,27 @@ while not done: #Makes program run until stopped
            print("There is no room in that direction, try a different way.")
        else: current_room = next_room
 
-    elif user_choice.lower() == "east" or user_choice.lower() == "east": #allows the player to move east
+    elif user_choice.lower() == "east" or user_choice.lower() == "e": #allows the player to move east
        next_room = room_list[current_room][2]
        if next_room == None:
            print("There is no room in that direction, try a different way.")
        else: current_room = next_room
 
-    elif user_choice.lower() == "south" or user_choice.lower() == "south": #allows the player to move south
+    elif user_choice.lower() == "south" or user_choice.lower() == "s": #allows the player to move south
        next_room = room_list[current_room][3]
        if next_room == None:
            print("There is no room in that direction, try a different way.")
        else: current_room = next_room
 
-    elif user_choice.lower() == "west" or user_choice.lower() == "west": #allows the player to move west
-       next_room = room_list[current_room][3]
+    elif user_choice.lower() == "west" or user_choice.lower() == "w": #allows the player to move west
+       next_room = room_list[current_room][4]
        if next_room == None:
            print("There is no room in that direction, try a different way.")
        else: current_room = next_room
+
+    elif user_choice.lower() == "quit" or user_choice.lower() == "q": #allows the player to move quit
+       print("Thanks for playing.")
+       done = True
+
+    else:
+        print("Invalid input, try again.")
