@@ -15,24 +15,37 @@ room = ("The sunroom is filled with dirt.",5, None, None, 1) #Sunroom
 room_list.append(room)
 room = ("The twisted hallway leads to a heavy locked door that will require a key.",4, 1, None, None) #Hallway
 room_list.append(room)
-room = ("As in the rest of the house, there is nothing in this room.",6, None, 3, None) #Foyer
+room = ("In keeping with most of the house, there is nothing of interest in this foyer..",6, None, 3, None) #Foyer
 room_list.append(room)
-room = ("This dark room has a skeleton in the corner, its mouth appears to be holding something.",None, None, 2, None) #Darkroom
+room = ("This dark room has a skeleton in the corner, its mouth appears to be holding something, you examine it and find a key.",None, None, 2, None) #Darkroom
+#Decided to automaticly give the player a key instead of forcing them to interact with a skelton because who wants to interact with a skeleton?
 room_list.append(room)
 room = ("Congratulations, you reached the bunker and are now safe!",None, None, 4, None) #Bunker
 room_list.append(room)
 
+print("World War 3 has started and America is being attacked.") #Establishes a beleivable story to get the player emotionally invested
+print("Your freinds house has a nuclear bunker and they are out of town so you decide to go there.")
+print("Unluckily for you, their house is not very straightforward.")
+
 current_room = 0 #Starting Location as doorway
-next_room = 0 #sets up varible for later
+next_room = 0 #sets up varibles for later
+player_has_key = False
 done = False
 while not done: #Makes program run until stopped
 
     print()
     print(room_list[current_room][0]) #Tells player where thet curently are
-    user_choice = input("Press N,E,S,W to move or Q to quit.") #Tells player how ot interact with the game
+    user_choice = input("Press N,E,S,W to move or Q to quit.") #Tells player how to interact with the game
 
     if user_choice.lower() == "north" or user_choice.lower() == "n": #allows the player to move north
+
+       if current_room == 3 and player_has_key == False: #Super Janky way of checking if the player is in Room 3 with the key
+        print("You do not have the key.")
+        continue
+       if current_room == 2: #Again really bad way to check if the player is in a certan room to give them a key, my really tired brain can't think of a better way lol
+           player_has_key = True
        next_room = room_list[current_room][1]
+
        if next_room == None:
            print("There is no room in that direction, try a different way.")
        else: current_room = next_room
