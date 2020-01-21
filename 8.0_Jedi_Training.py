@@ -23,7 +23,7 @@ print(list_total/num)
 '''
 2.) Write a program that will strip the username (whatever is in front of the @ symbol)
 from any e-mail address and print it. First ask the user for their e-mail address.
-'''
+
 done=False
 while not done:
     email=input("What is your email address?")
@@ -45,7 +45,7 @@ while True:
         count+=1
     print(email[0:position])
 
-'''
+
 TEXT FORMATTING:
 3.) Make following program output the following:
      
@@ -57,6 +57,6 @@ TEXT FORMATTING:
 '''
 score = 41237
 highscore = 1023407
-print(f"Score:      {score:,}")
-print(f"High score: {highscore:,}" )
+print(f"Score:      {score:>9,}")
+print(f"High score: {highscore:>9,}" )
 
