@@ -9,3 +9,12 @@ Once the user quits, print "Goodbye!"
 months = "JanFebMarAprMayJunJulAugSepOctNovDec"
 
 '''
+
+months = "JanFebMarAprMayJunJulAugSepOctNovDec"
+while True:
+    ans = int(input("number between 1-12"))
+    if 0 < ans < 13:
+        print(months[(ans-1)*3:((ans-1)*3)+3])
+    else:
+        print("Goodbye!")
+        break
