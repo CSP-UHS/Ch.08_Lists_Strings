@@ -27,3 +27,8 @@
 #print(baseball)
 #x[2]=24
 #print(baseball)
+
+#uhs_slogan="My School is the best"
+#print(uhs_slogan[0]) - prints "M"
+#print(uhs_slogan[0:3]) - prints first 3 characters "My "
+#print(uhs_slogan[:13]+'awesome!') - prints "My School is awesome!"

@@ -6,3 +6,17 @@ ADVENTURE PROGRAM
 3.) Expand your program to make it a real adventure game
 
 '''
+#Loading all rooms
+room_list=[]
+room=["You are on the front porch.",2,None,None,None]
+room_list.append(room)
+room=["You are in Bedroom2.",4,2,None,None]
+room_list.append(room)
+room=["You are in the SouthHall.",5,3,0,1369j]
+room_list.append(room)
+
+#spawning player
+current_room=0
+
+done=False
+while not done:
