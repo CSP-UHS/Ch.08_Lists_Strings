@@ -32,3 +32,8 @@
 #print(uhs_slogan[0]) - prints "M"
 #print(uhs_slogan[0:3]) - prints first 3 characters "My "
 #print(uhs_slogan[:13]+'awesome!') - prints "My School is awesome!"
+
+#import random
+#for i in rnage(10):
+    #x=random.randrange(120)
+    #print(f"My number: {x:3}") - 3 field width
