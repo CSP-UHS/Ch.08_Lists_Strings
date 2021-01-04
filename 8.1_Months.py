@@ -13,8 +13,8 @@ x = 1
 while x > 0:
     months = "JanFebMarAprMayJunJulAugSepOctNovDec"
     string = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-    numb = int(input("Please enter a number: "))
-    print(months[(numb*3)-3:(numb*3)])
-    if 0 > numb or 12 < numb:
+    num = int(input("Please enter a number: "))
+    print(months[(num*3)-3:(num*3)])
+    if 0 > num or 12 < num:
         print("Goodbye")
         x -= 1

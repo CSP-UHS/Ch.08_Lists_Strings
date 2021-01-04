@@ -10,14 +10,14 @@ Secret Message: Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q
 '''
 
 message = 'Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q)x~*'
-decrypted_text = ''
+decrypted = ''
 for i in range(-20,21,1):
-    decrypted_text = ''
+    decrypted = ''
     for c in message:
         x = ord(c)
         x += i
         c2 = chr(x)
-        decrypted_text += c2
-    print(decrypted_text)
+        decrypted += c2
+    print(decrypted)
 
 
