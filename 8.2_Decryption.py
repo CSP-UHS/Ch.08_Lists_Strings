@@ -16,5 +16,5 @@ for i in range(-20, 21):
     for c in Secret_Message:
         x = ord(c)
         x += i
-        decrypt += (chr(x))
+        decrypt += chr(x)
     print(decrypt)
