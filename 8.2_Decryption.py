@@ -12,9 +12,9 @@ Secret Message: Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q
 Secret_Message = "Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q)x~*"
 
 for i in range(-20, 20, 1):
-    encrypted_text = ""
-    for x in range(len(Secret_Message)):
-        y = (ord(Secret_Message[x]))
-        y += i
-        encrypted_text += (chr(y))
-    print(encrypted_text)
+    decrypt = ""
+    for c in Secret_Message:
+        x = ord(c)
+        x += i
+        decrypt += (chr(x))
+    print(decrypt)
