@@ -15,8 +15,8 @@ c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
 selected_list = c_list
 sum = 0
 
-for i in range(len(selected_list)):
-    sum += selected_list[i]
+for i in range(len(selected_list)):  # # Yes I know that I could use 'for thing in list'
+    sum += selected_list[i]          # # But that is no fun
 
 average = sum/len(selected_list)
 print(average)
