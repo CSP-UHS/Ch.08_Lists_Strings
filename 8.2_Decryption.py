@@ -11,7 +11,7 @@ Secret Message: Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q
 
 Secret_Message = "Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q)x~*"
 
-for i in range(-20, 20, 1):
+for i in range(-20, 21):
     decrypt = ""
     for c in Secret_Message:
         x = ord(c)
