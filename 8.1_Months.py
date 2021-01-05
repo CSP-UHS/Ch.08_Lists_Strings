@@ -10,3 +10,9 @@ months = "JanFebMarAprMayJunJulAugSepOctNovDec"
 
 '''
 
+month = int(input("Enter a month number, 1-12:"))
+
+if month<1 or month>12:
+    stop
+months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+print(months[month])
