@@ -62,8 +62,8 @@ score = 41237
 highscore = 1023407
 
 
-print(f"Score: {score:>12}")
-print(f"Highscore: {highscore:>8}")
+print(f"Score: {score:>13,}")
+print(f"Highscore: {highscore:>8,}")
 
 
 
