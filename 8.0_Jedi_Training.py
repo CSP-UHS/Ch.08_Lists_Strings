@@ -44,6 +44,6 @@ TEXT FORMATTING:
 
 score = 41237
 highscore = 1023407
-print("Score:        ", str(score))
-print("High score: ", str(highscore))
+print("Score:", f"{score: >15,}")
+print("High score:", f"{highscore: >10,}")
 
