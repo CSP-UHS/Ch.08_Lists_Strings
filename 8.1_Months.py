@@ -9,10 +9,15 @@ Once the user quits, print "Goodbye!"
 months = "JanFebMarAprMayJunJulAugSepOctNovDec"
 
 '''
+loop = "true"
 
-month = int(input("Enter a month number, 1-12:"))
 
-if month<1 or month>12:
-    stop
-months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
-print(months[month])
+while loop == "true":
+    month = int(input("Enter a month number, 1-12:"))
+    month = month - 1
+    if month<0 or month>11:
+        loop = "false"
+    if loop == "false":
+        exit()
+    months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+    print(months[month])
