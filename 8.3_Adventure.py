@@ -8,6 +8,7 @@ ADVENTURE PROGRAM
 '''
 
 # # room setup: Room Description, North, East, South, West,
+import random
 
 room_list = []
 room = ['You stand in the castle entrance.  The main courtyard lies to the south, and the guard tower is to the West.',
@@ -38,8 +39,6 @@ room_list.append(room)
 room = ['The heavy curtains make the Royal bedroom feel dark yet spacious.  The only exit is to the west, into the '
         'Grand Hall.', None, None, None, 6]
 room_list.append(room)
-# #room = ['Secret']
-# #room_list.append(room)
 
 # #print(room_list)
 
@@ -49,20 +48,47 @@ done = False
 next_room = None
 
 
-coin_sack = False   # #bribe guards
-bread = False       # #bribe peasant
-rope = False        # #escape over wall
-knife = False       # #fight guards
+royal_crown = False  # #In order to win, you must escape with the crown
+
+coin_sack = False    # #bribe guards
+bread = False        # #bribe peasant
+rope = False         # #escape over wall
+knife = False        # #fight guards
 royal_clothing = False      # #disguise self
 peasants_clothing = False   # #disguise self
 
 
 def investigate():
-    print('test')
+    print('\nYou investigate the room.')
+    global royal_crown, coin_sack, bread, rope, knife, royal_clothing, peasants_clothing    # #make all variables global
+
+    if current_room == 7 and royal_crown is False:
+        print('\nYou find the royal crown resting upon the throne.')
+        royal_crown = True
+    elif current_room == 8 and royal_clothing is False:
+        print('\nYou find a set of royal clothing in the closet.')
+        royal_clothing = True
+    elif current_room == 5 and bread is False:
+        print('\nYou steal a piece of bread from the kitchen.')
+        bread = True
+    elif current_room == 4 or current_room == 2 and coin_sack is False and random.randrange(0, 2) == 1:
+        print('\nYou find a coin sack hidden underneath a loose floorboard')
+        coin_sack = True
+    elif random.randrange(0, 4) == 1 and rope is False:
+        print('You find a rope.')
+        rope = True
+    elif random.randrange(0, 4) == 1 and peasants_clothing is False:
+        print("You find a set of peasant's clothing.")
+        peasants_clothing = True
+    elif random.randrange(0, 4) == 1 and knife is False:
+        print('You find a knife.')
+        knife = True
+    else:
+        print('\nYou do not find anything in your investigation.')
 
 
 def inventory():
-    print('Current backpack items')
+    print('\nCurrent backpack items:')
     if coin_sack is True:
         print('Sack of coins')
     if bread is True:
@@ -70,17 +96,21 @@ def inventory():
     if rope is True:
         print('Rope')
     if knife is True:
-        print('Rope')
+        print('Knife')
     if royal_clothing is True:
         print('Royal Clothing')
     if peasants_clothing is True:
         print("Peasant's Clothing")
-    input('Would you like to use an item? (Y/N)')
+    action = input('\nWould you like to use an item? (Y/N): ')
+    if action.upper() == 'Y' or action.upper() == 'YES':
+        print('placeholder')
+    elif action.upper() == 'N' or action.upper() == 'NO':
+        print('You do not use an item.')
 
 
 while not done:
     print('\n', room_list[current_room][0])
-    choice = input('Would you like to go North, South, East, or West?  You can also investigate the current rome (I) '
+    choice = input('Would you like to go North, South, East, or West?  You can also investigate the current room (I) '
                    'or check your backpack (B).  Enter Q to quit: ')
     if choice.upper() == 'N' or choice.upper() == 'NORTH':
         next_room = room_list[current_room][1]
@@ -116,6 +146,9 @@ while not done:
 
     elif choice.upper() == 'I' or choice.upper() == 'INVESTIGATE':
         investigate()
+
+    elif choice.upper() == 'B' or choice.upper() == 'BACKPACK':
+        inventory()
 
 
 # #mechanic to search from the tower?
