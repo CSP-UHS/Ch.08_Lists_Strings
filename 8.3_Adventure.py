@@ -29,6 +29,10 @@ fourkey = True
 fivekey = True
 sixkey = True
 tenkey = True
+hp = 5
+slimehp = 1
+spiderhp = 2
+skeletonhp = 3
 
 r_l = []
 room = ["You are in a dimly lit room with a single door.", 1, None, None, None]
