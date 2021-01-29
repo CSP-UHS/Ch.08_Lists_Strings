@@ -7,7 +7,7 @@ ADVENTURE PROGRAM
 
 '''
 
-# # room setup: Room Description, North, East, South, West,
+# room setup: Room Description, North, East, South, West,
 import random
 
 room_list = []
@@ -40,7 +40,7 @@ room = ['The heavy curtains make the Royal bedroom feel dark yet spacious.  The 
         'Grand Hall.', None, None, None, 6]
 room_list.append(room)
 
-# #print(room_list)
+# print(room_list)
 
 current_room = 0
 
@@ -48,21 +48,24 @@ done = False
 next_room = None
 
 
-royal_crown = False  # #In order to win, you must escape with the crown
+royal_crown = False  # In order to win, you must escape with the crown
 
-coin_sack = False    # #bribe guards
-bread = False        # #bribe peasant
-rope = False         # #escape over wall
-knife = False        # #fight guards
-royal_clothing = False      # #disguise self
-peasants_clothing = False   # #disguise self
+coin_sack = False       # bribe guards
+bread = False           # bribe peasant
+rope = False            # escape over wall
+knife = False           # fight guards
+armor = True           # fight guards
+royal_clothing = False      # disguise self
+peasants_clothing = False   # disguise self
+
+armor_equipped = False  # when fighting guards, user must have armor equipped
 
 
 def investigate():
     print('\nYou investigate the room.')
-    global royal_crown, coin_sack, bread, rope, knife, royal_clothing, peasants_clothing    # #make all variables global
+    global royal_crown, coin_sack, bread, rope, knife, royal_clothing, peasants_clothing, armor  # make variables global
 
-    if current_room == 7 and royal_crown is False:
+    if current_room == 7 and royal_crown is False:                      # first check for location dependent items
         print('\nYou find the royal crown resting upon the throne.')
         royal_crown = True
     elif current_room == 8 and royal_clothing is False:
@@ -74,15 +77,18 @@ def investigate():
     elif current_room == 4 or current_room == 2 and coin_sack is False and random.randrange(0, 2) == 1:
         print('\nYou find a coin sack hidden underneath a loose floorboard')
         coin_sack = True
-    elif random.randrange(0, 4) == 1 and rope is False:
-        print('You find a rope.')
+    elif random.randrange(0, 4) == 1 and rope is False:                 # then check for general random items
+        print('\nYou find a rope.')
         rope = True
-    elif random.randrange(0, 4) == 1 and peasants_clothing is False:
-        print("You find a set of peasant's clothing.")
+    elif random.randrange(0, 5) == 1 and peasants_clothing is False:
+        print("\nYou find a set of peasant's clothing.")
         peasants_clothing = True
     elif random.randrange(0, 4) == 1 and knife is False:
-        print('You find a knife.')
+        print('\nYou find a knife.')
         knife = True
+    elif random.randrange(0, 4) == 1 and armor is False:
+        print('\nYou find a set of armor.')
+        armor = True
     else:
         print('\nYou do not find anything in your investigation.')
 
@@ -101,15 +107,44 @@ def inventory():
         print('Royal Clothing')
     if peasants_clothing is True:
         print("Peasant's Clothing")
+    if armor is True:
+        print('Armor')
+
+        if armor_equipped is False:
+            print('\nYou have not equipped your armor.')
+        else:
+            print('\nYou have equipped your armor.')
+
     action = input('\nWould you like to use an item? (Y/N): ')
     if action.upper() == 'Y' or action.upper() == 'YES':
-        print('placeholder')
+        use_item()
+
     elif action.upper() == 'N' or action.upper() == 'NO':
-        print('You do not use an item.')
+        print('\nYou do not use an item.')
+
+
+def use_item():
+    item = input('\nWhich item would you like to use? ')
+    global royal_crown, coin_sack, bread, rope, knife, royal_clothing, peasants_clothing, armor, armor_equipped, done
+    if item.upper()[:3] == 'ARM' and armor is True and armor_equipped is False:
+        print('\nYou equip the armor.')
+        armor_equipped = True
+    else:
+        print('\nYou have already equipped your armor.')
+
+    if item.upper() == 'COIN SACK' and royal_crown is True and current_room == 0 or current_room == 1:
+        print('You give the guards the coin sack as a bribe, and they agree to look the other way as you escape with '
+              'the crown.')
+        done = True
+    if item.upper() == 'BREAD' and royal_crown is True and current_room == 0 or current_room == 1:
+        print('You give the bread to a peasant farmer, who agrees to hide you in his wagon when he leaves the castle. '
+              'You hide underneath several bags of seed, and you escape from the castle, undetected.')
+        done = True
 
 
 while not done:
-    print('\n', room_list[current_room][0])
+    print()
+    print(room_list[current_room][0])
     choice = input('Would you like to go North, South, East, or West?  You can also investigate the current room (I) '
                    'or check your backpack (B).  Enter Q to quit: ')
     if choice.upper() == 'N' or choice.upper() == 'NORTH':
@@ -142,6 +177,7 @@ while not done:
             print('\nYou enter the room to the west.')
     elif choice.upper() == 'Q' or choice.upper() == 'QUIT':
         done = True
+        print('Better luck next time.')
         continue
 
     elif choice.upper() == 'I' or choice.upper() == 'INVESTIGATE':
@@ -151,4 +187,4 @@ while not done:
         inventory()
 
 
-# #mechanic to search from the tower?
+# mechanic to search from the tower?
