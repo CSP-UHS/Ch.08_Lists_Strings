@@ -47,6 +47,7 @@ current_room = 0
 done = False
 next_room = None
 
+timer = None
 
 royal_crown = False  # In order to win, you must escape with the crown
 
@@ -63,12 +64,13 @@ armor_equipped = False  # when fighting guards, user must have armor equipped
 
 def investigate():
     print('\nYou investigate the room.')
-    global royal_crown, coin_sack, bread, rope, sword, royal_clothing, peasants_clothing, armor  # make variables global
+    global royal_crown, coin_sack, bread, rope, sword, royal_clothing, peasants_clothing, armor, timer
 
     if current_room == 7 and royal_crown is False:                      # first check for location dependent items
         print('\nYou find the royal crown resting upon the throne, and you quickly snatch it and put it in your bag.  '
               'It has a large sapphire crystal embedded on the front.')
         royal_crown = True
+        timer = 7
     elif current_room == 8 and royal_clothing is False:
         print('\nYou find a set of royal clothing in the closet.')
         royal_clothing = True
@@ -168,19 +170,16 @@ def fight():
         print("\nYou use your sword to slice through the guard's armor.  One tries to counterattack, but his spear is "
               "deflected by your armor with a deep 'clang!'  The guards cannot stop you, and you escape out of the "
               "castle with the crown.  ")
-        done = True
     elif sword is False and armor_equipped is True:
         print('\nYou try to attack the guards, but you have no weapon to fight them with.  You try to use your fists, '
               'but you cannot land a solid hit.  You are unable to take the guards down, and you are captured.')
-        done = True
     elif sword is True and armor_equipped is False:
         print("\nYou use your sword to slice through the guard's armor.  Another guard counterattacks with his "
               "spear, and he stabs right into your gut.  You fall to the ground and are captured by the guards.")
-        done = True
     else:
         print('\nYou try to fight back, but you have no tools to do so.  You are quickly outnumbered and captured by '
               'the guards.')
-        done = True
+    done = True
 
 
 while not done:
@@ -227,5 +226,23 @@ while not done:
     elif choice.upper()[:1] == 'B':
         inventory()
 
+    if type(timer) is int:
+        timer -= 1
+        if timer == 3:
+            print('\nYou hear bells signaling an alarm.  The guards are now looking for you.  Try to escape quickly.')
+        elif timer == 0:
+            encounter = True
+            while encounter is True:
+                choice = input('\nThe guards catch up and surround you.  Would you like to fight? (Y/N): ')
+                if choice.upper()[:1] == 'Y':
+                    fight()
+                    encounter = False
+                elif choice.upper()[:1] == 'N':
+                    print('\nYou have no choice but to surrender.  You are thrown into the dungeon deep beneath the '
+                          'castle, from where you will never escape.')
+                    encounter = False
+                    done = True
+                else:
+                    print('\nThat is not a valid response.')
 
 # mechanic to search from the tower?
