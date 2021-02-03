@@ -59,7 +59,7 @@ armor = False           # fight guards
 royal_clothing = False      # disguise self
 peasants_clothing = False   # disguise self
 
-armor_equipped = False  # when fighting guards, user must have armor equipped
+armor_equipped = False  # when fighting guards, user must have armor equipped or else they get killed
 
 
 def investigate():
@@ -99,6 +99,8 @@ def investigate():
 
 def inventory():
     print('\nCurrent backpack items:')
+    if royal_clothing is True:
+        print('Royal Crown')
     if coin_sack is True:
         print('Sack of coins')
     if bread is True:
@@ -180,6 +182,12 @@ def fight():
         print('\nYou try to fight back, but you have no tools to do so.  You are quickly outnumbered and captured by '
               'the guards.')
     done = True
+
+
+print('\nPOV: You are a thief in Medieval Europe, and you have been tasked with stealing the the Royal Crown from '
+      'Darthill Castle.  \nGetting into the castle is no problem, but getting out with the crown could prove to be '
+      'difficult.  \nYou need to find the crown and then escape.  You can find items with the investigation action, '
+      'and you can use those items to help you escape.  ')
 
 
 while not done:
