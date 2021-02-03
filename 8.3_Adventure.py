@@ -225,7 +225,7 @@ while not done:
             print('\nYou enter the room to the west.')
     elif choice.upper()[:1] == 'Q':
         done = True
-        print('Better luck next time.')
+        print('\nBetter luck next time.')
         continue
 
     elif choice.upper()[:1] == 'I':
