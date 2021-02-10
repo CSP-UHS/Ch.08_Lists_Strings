@@ -13,7 +13,7 @@ months = "JanFebMarAprMayJunJulAugSepOctNovDec"
 months = "JanFebMarAprMayJunJulAugSepOctNovDec"
 done=False
 while not done:
-    themonth=float(input("Enter monjth number 1-13"))
+    themonth=float(input("Enter month number 1-13"))
     if themonth==13:
         done=True
         break
