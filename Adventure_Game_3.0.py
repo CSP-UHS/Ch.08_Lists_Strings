@@ -15,7 +15,7 @@ import random
 # r10 = "boss key room"
 # r11 = "boss room"
 r0 = "You are standing in a cold, dark room.  The only exit is a stone archway before you."
-r1 = "Stepping into the room, four braziers, one in each corner of the room, roar to life.\nAcross the floor spans a" \
+r1 = "Stepping into the room, four braziers, one in each corner of the room, roar to life.\nAcross the floor spans a " \
      "massive compass rose, laid in shining black tile.\n" \
      "To the west, there is a stone door bound in chains, which sparkle with blue light.\n" \
      "To the east, an open archway leads to a dimly lit room.\n" \
@@ -249,7 +249,7 @@ def interact():         # interacts with/picks up any items or devices in a room
                     print()
                     input("[press enter to continue]")
                     print()
-                print("You year a loud *thud* and feel a wave of magical energy.\n"
+                print("You hear a loud *thud* and feel a wave of magical energy.\n"
                       "Somehow, you know the chained door is now open.")
                 print()
                 cr = 3
@@ -346,9 +346,15 @@ def main():
         elif rl[cr] == rl[10]:
             rl[cr][0] = "[boss key room]"
         elif rl[cr] == rl[11]:
-            rl[cr][0] = "[Boss room]"
+            rl[cr][0] = "You go forth, ready to face the dragon again."
         move()
-        if rl[cr] == rl[11]:
+        if rl[cr] == rl[7] and rl[cr][0] != "[slime room]":
+            print(rl[cr][0])
+        elif rl[cr] == rl[8] and rl[cr][0] != "[spider room]":
+            print(rl[cr][0])
+        elif rl[cr] == rl[9] and rl[cr][0] != "[skeleton room]":
+            print(rl[cr][0])
+        elif rl[cr] == rl[11]:
             print(rl[cr][0])
             rl[cr][0] = "You go forth, ready to face the dragon again."
         if rl[cr][7] == "clear":
