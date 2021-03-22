@@ -23,8 +23,8 @@ r1 = "Stepping into the room, four braziers, one in each corner of the room, roa
      "They stand 25 feet tall and nearly as wide, with a large ruby set at their seam, 5 feet off the ground.\n" \
      "At its center, there is a keyhole."
 r2 = "A deep ravine spans the center of the room, running from north to south.\n" \
-     "In front of you stands a pedestal with three buttons made of smooth black stone.\n" \
-     "Across the room, you see an archway, above which hang three flameless braziers.\n"
+     "In front of you stands a pedestal with four buttons made of smooth black stone.\n" \
+     "Across the room, you see an archway, above which hang four unlit torches.\n"
 r3 = "There are three doors in this room, in addition to the one you just entered from.\n" \
      "first, to the north.  A heavy steel door, above which is carved a crest with sword and shield.\n" \
      "To the south, a rough log door, similar to that of a hunting cabin.  Carved above it is a quiver and bow.\n" \
@@ -61,7 +61,7 @@ room = [r0, 1, None, None, None, "unlocked", "empty", "clear", "clear", None]
 rl.append(room)
 room = [r1, None, 2, 0, None, "unlocked", "empty", "clear", "clear", None]
 rl.append(room)
-room = [r2, None, 3, None, 1, "unlocked", "empty", "clear", "active", None]
+room = [r2, None, None, None, 1, "unlocked", "empty", "clear", "active", None]
 rl.append(room)
 room = [r3, 4, 5, 6, 2, "unlocked", "empty", "clear", "clear", None]
 rl.append(room)
@@ -95,15 +95,11 @@ combat = False
 """
 
 
-def lock_check():       # tests if a door is locked, unlocks if player has a key
-    print("hello")
-
-
 def move():             # player inputs an option, carries out if possible
     global cr
     print("What would you like to do?\n")
     print("[N] North\n[E] East\n[S] South\n[W] West")
-    if rl[cr][6] == "items":
+    if rl[cr][6] == "items" or rl[cr][8] == "active":
         print("[I] Interact")
     print()
     choice = input("Input: ")
@@ -134,7 +130,83 @@ def move():             # player inputs an option, carries out if possible
 
 
 def puzzle():           # puzzle obstacle
-    print("hello")
+    global bridge
+    at_bridgeped = True
+    bridge = False
+    torch_a = False
+    torch_b = False
+    torch_c = False
+    torch_d = False
+    print("There are four buttons on the pedestal.")
+    while at_bridgeped:
+        if bridge:
+            at_bridgeped = False
+            continue
+        print()
+        print("[1] [2] [3] [4]")  # asks for a button
+        press = int(input("Press a button: "))
+        print()
+        if press == 1:  # puzzle magic
+            if torch_a:
+                torch_a = False
+                print("The first torch flickers out.")
+            else:
+                torch_a = True
+                print("The first torch roars to life.")
+            if torch_b:
+                torch_b = False
+                print("The second torch flickers out.")
+            else:
+                torch_b = True
+                print("The second torch roars to life.")
+        elif press == 2:
+            if torch_a:
+                torch_a = False
+                print("The first torch flickers out.")
+            else:
+                torch_a = True
+                print("The first torch roars to life.")
+            if torch_c:
+                torch_c = False
+                print("The third torch flickers out.")
+            else:
+                torch_c = True
+                print("The third torch roars to life.")
+        elif press == 3:
+            if torch_b:
+                torch_b = False
+                print("The second torch flickers out.")
+            else:
+                torch_b = True
+                print("The second torch roars to life.")
+            if torch_c:
+                torch_c = False
+                print("The third torch flickers out.")
+            else:
+                torch_c = True
+                print("The third torch roars to life.")
+        elif press == 4:
+            if torch_a:
+                torch_a = False
+                print("The first torch flickers out.")
+            else:
+                torch_a = True
+                print("The first torch roars to life.")
+            if torch_d:
+                torch_d = False
+                print("The fourth torch flickers out.")
+            else:
+                torch_d = True
+                print("The fourth torch roars to life.")
+        else:
+            print("[invalid command]")
+        if torch_a and torch_b and torch_c and torch_d:
+            bridge = True  # raises bridge
+            print()
+            print("The ground shakes as a bridge rises from the pit, forming a path to the other side.")
+            print()
+            rl[2][8] = "clear"
+            rl[2][2] = 3
 
 
 def interact():         # interacts with/picks up any items or devices in a room
@@ -155,7 +227,7 @@ def interact():         # interacts with/picks up any items or devices in a room
                     input("[press enter to continue]")
                     print()
                 elif rl[cr] == rl[5]:
-                    print("Picking up the crystal, you feel power surge through your body.")
+                    print("Picking up the crystal, you feel its power surge through your body.")
                     playerClass = "wizard"
                     print()
                     input("[press enter to leave room]")
@@ -177,7 +249,7 @@ def interact():         # interacts with/picks up any items or devices in a room
                     print()
                     input("[press enter to continue]")
                     print()
-                print("You year a loud *thud* and feel a wave of magical energy\n"
+                print("You year a loud *thud* and feel a wave of magical energy.\n"
                       "Somehow, you know the chained door is now open.")
                 print()
                 cr = 3
@@ -189,15 +261,9 @@ def interact():         # interacts with/picks up any items or devices in a room
             print("You take the key.")
             print()
             rl[1][1] = 11
+    elif rl[cr] == rl[2]:
+        puzzle()
 
-
-"""
------player introduction-----
-"""
-
-"""
------flavour text-----
-"""
 
 """
 -----combat data-----
@@ -284,6 +350,7 @@ def main():
         move()
         if rl[cr] == rl[11]:
             print(rl[cr][0])
+            rl[cr][0] = "You go forth, ready to face the dragon again."
         if rl[cr][7] == "clear":
             combat = False
         else:
@@ -357,10 +424,16 @@ def main():
                     print()
                     if rl[cr][7] == "slime":
                         rl[cr][0] = "[slime room]"
+                        print("You feel refreshed, and a bit stronger than before.")
+                        print()
                     elif rl[cr][7] == "spider":
                         rl[cr][0] = "[spider room]"
+                        print("You feel refreshed, and a bit stronger than before.")
+                        print()
                     elif rl[cr][7] == "skeleton":
                         rl[cr][0] = "[skeleton room]"
+                        print("You feel refreshed, and a bit stronger than before.")
+                        print()
                     elif rl[cr][7] == "dragon":
                         print("The great dragon falls to the ground, crumbling into a pile of dust.")
                         print("On the opposite end of the room, a section of the wall sparkles, before fading away,")
