@@ -134,19 +134,20 @@ while not done:
             if roll: # if the player is rolling patient 3 to the operating room and go here they went off path and kil the patient
                 print("You didn't take the most direct path and your patient died!")
                 done = True # game ends
-            room2 = input("You see a bed you can rest on, would you like to rest? (Y for yes, N for no)")
-            if room2.lower() == "y" or room2.lower() == "yes":
-                print("You fully rest, but lose 10 moves.") # player regains all sleep but loses 10 moves
-                sleep = 50
-                moves -= 10
-            if room2.lower() == "n" or room2.lower() == "no":
-                print("You decide not to sleep.")
-                moves += 1
-                sleep += 2
-            else:
-                print("That isn't an option.") # player input a non-valid option
-                moves += 1
-                sleep += 2
+            if not roll:
+                room2 = input("You see a bed you can rest on, would you like to rest? (Y for yes, N for no)")
+                    if room2.lower() == "y" or room2.lower() == "yes":
+                        print("You fully rest, but lose 10 moves.") # player regains all sleep but loses 10 moves
+                        sleep = 50
+                        moves -= 10
+                    if room2.lower() == "n" or room2.lower() == "no":
+                        print("You decide not to sleep.")
+                        moves += 1
+                        sleep += 2
+                    else:
+                        print("That isn't an option.") # player input a non-valid option
+                        moves += 1
+                        sleep += 2
         if current_room == 3:
             room3 = input("The doctors around you ask you to help roll this patient to the operating room. "
                           "Would you like to do this now? (Y for yes, N for no)")
@@ -166,15 +167,23 @@ while not done:
             if roll: # same as room 2
                 print("You didn't take the most direct path and your patient died!")
                 done = True
-            egg = random.randint (1, 55) # picks random number 1-55
-            if egg == 54 or egg == 32 or egg == 7: # if one of these numbers they get a special prize
-                print("Congrats you found an easter egg in the game and your needs were fully restored. You also gained 20 moves!")
-                sleep = 50
-                moves += 20
-            else: # if it wasn't one of the three nothing happens
-                print("Hmm.. nothing here.")
+            if not roll:
+                egg = random.randint (1, 55) # picks random number 1-55
+                if egg == 54 or egg == 32 or egg == 7: # if one of these numbers they get a special prize
+                    print("Congrats you found an easter egg in the game and your needs were fully restored. You also gained 20 moves!")
+                    sleep = 50
+                    moves += 20
+                else: # if it wasn't one of the three nothing happens
+                    print("Hmm.. nothing here.")
         if current_room == 5:
+            room5 = input("You see Patient 1, they'll need a checkup to make sure their vitals are ok. "
+                          "Would you like to do this now? (Y for yes, N for no)")
+            if room5.lower() == "y" or room5.lower() == "yes":
 
+            if room5.lower() == "n" or room5.lower() == "no":
+                print("You decide to come back later.")
+                moves += 1
+                sleep += 2
         if current_room == 6:
 
         if current_room == 7:
@@ -194,6 +203,10 @@ while not done:
                 else: # if they didn't get one of the two numbers the surgery goes well
                     print("Phew! You successfully did those surgical steps and patient 3 lives!")
                     p3 = True
-        if p1 == True and p2 == True and p3 == True: # if the player completes all the tasks for the patients they win
-            print("Congrats you have helped all your patients! You win!")
-            done = True
+            if not roll:
+                print("There's not much to do here right now.")
+                moves += 1
+                sleep += 1
+    if p1 == True and p2 == True and p3 == True: # if the player completes all the tasks for the patients they win
+        print("Congrats you have helped all your patients! You win!")
+        done = True
