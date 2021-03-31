@@ -19,7 +19,7 @@ r1 = "Stepping into the room, four braziers, one in each corner of the room, roa
      "massive compass rose, laid in shining black tile.\n" \
      "To the west, there is a stone door bound in chains, which sparkle with blue light.\n" \
      "To the east, an open archway leads to a dimly lit room.\n" \
-     "And before you, a magnificent set of double doors, made of of gold and steel.\n" \
+     "And before you, a magnificent set of double doors, made of gold and steel.\n" \
      "They stand 25 feet tall and nearly as wide, with a large ruby set at their seam, 5 feet off the ground.\n" \
      "At its center, there is a keyhole."
 r2 = "A deep ravine spans the center of the room, running from north to south.\n" \
@@ -28,7 +28,7 @@ r2 = "A deep ravine spans the center of the room, running from north to south.\n
 r3 = "There are three doors in this room, in addition to the one you just entered from.\n" \
      "first, to the north.  A heavy steel door, above which is carved a crest with sword and shield.\n" \
      "To the south, a rough log door, similar to that of a hunting cabin.  Carved above it is a quiver and bow.\n" \
-     "Finally, to the west lies a finely made dark mahogany door. Its symbol is a book and quill.\n" \
+     "Finally, to the east lies a finely made dark mahogany door. Its symbol is a book and quill.\n" \
      "In the center of the room, a small plaque reads: \n" \
      "\"Three paths before you, all may be explored, only one shall you travel.\""
 r4 = "Banners hang from the walls of this room, ancient suits of armor standing watch.\n" \
@@ -46,7 +46,7 @@ r9 = "This room was once a crypt, its floor now littered with bones and dust.  T
      "One set of bones rises to defend its slumbering brethren, rushing at you with longsword in hand."
 r10 = "A large golden key floats in the center of this room.  To the east, what first appears to be a large\n" \
       "mirror reflects the great doors of the compass room, instead of your reflection.  You feel as though you\n" \
-      "could walk right through its dully shimmereing surface."
+      "could walk right through its dully shimmering surface."
 r11 = "Upon inserting the key into the lock on the massive doors, the large ruby begins to glow with red light.\n" \
       "brighter and brighter it grows, until both it and the key shatter into countless fragments of light, which\n" \
       "freeze midway through the air, briefly glittering before fading away.\n" \
