@@ -38,28 +38,28 @@ while not done:
     if user_ans.lower() == 'n' or user_ans.lower() == 'north':
         next_room = room_lists[current_room][1]
 #   this code look to see if the user can go at that direction or not
-        if next_room is None:
+        if next_room == None:
             print("You can't go that way")
         else:
             current_room = next_room
     if user_ans.lower() == 'e' or user_ans.lower() == 'east':
         next_room = room_lists[current_room][2]
 
-        if next_room is None:
+        if next_room == None:
             print("You can't go that way")
         else:
             current_room = next_room
     if user_ans.lower() == 's' or user_ans.lower() == 'south':
         next_room = room_lists[current_room][3]
 
-        if next_room is None:
+        if next_room == None:
             print("You can't go that way")
         else:
             current_room = next_room
     if user_ans.lower() == 'w' or user_ans.lower() == 'west':
         next_room = room_lists[current_room][4]
 
-        if next_room is None:
+        if next_room == None:
             print("You can't go that way")
         else:
             current_room = next_room
