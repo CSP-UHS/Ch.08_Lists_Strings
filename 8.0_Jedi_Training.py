@@ -12,14 +12,19 @@ a_list = [3,12,3,5,3,4,6,8,5,3,5,6,3,2,4]
 b_list = [4,15,2,7,8,3,1,10,9]
 c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
 
-
+for i in a_list:
+    i
+print()
 
 '''
 2.) Write a program that will strip the username (whatever is in front of the @ symbol)
 from any e-mail address and print it. First ask the user for their e-mail address.
 '''
-
-
+list = input("What is your email?: ")
+for ascii in list:
+    if ord(ascii) == 64:
+        break
+    print(ascii)
 
 '''
 TEXT FORMATTING:
@@ -33,7 +38,8 @@ TEXT FORMATTING:
      '''
 score = 41237
 highscore = 1023407
-print("Score:      " + str(score) )
-print("High score: " + str(highscore) )
+
+print(f"Score:      {score:10,}")
+print(f"High score: {highscore:10,}")
 
 
