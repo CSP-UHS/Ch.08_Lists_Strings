@@ -1,4 +1,4 @@
-#Sign your name:________________
+#Sign your name: Will Jacobson
 
 '''
 1.)
@@ -8,19 +8,29 @@ Don't use that. Sum the numbers individually as shown in the chapter.
 Also, a common mistake is to calculate the average each time through the loop 
 to add the numbers. Finish adding the numbers before you divide.
 '''
-a_list = [3,12,3,5,3,4,6,8,5,3,5,6,3,2,4]
-b_list = [4,15,2,7,8,3,1,10,9]
-c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
-
-
+a_list = [3,12,3,5,3,4,6,8,5,3,5,6,3,2,4] #4.8
+b_list = [4,15,2,7,8,3,1,10,9] #6.6
+c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10] #7.6
+av = 0
+list = c_list
+for item in list:
+    av += item
+av = av/len(list)
+print(f'The average is {av:.2}')
 
 '''
 2.) Write a program that will strip the username (whatever is in front of the @ symbol)
 from any e-mail address and print it. First ask the user for their e-mail address.
 '''
-
-
-
+user = True
+email = str(input("What is your email? "))
+mail = (email)
+for x in mail:
+    if x == "@":
+        break
+    else:
+        mail = mail + x
+print("Your username is,", mail(x))
 '''
 TEXT FORMATTING:
 3.) Make following program output the following:
