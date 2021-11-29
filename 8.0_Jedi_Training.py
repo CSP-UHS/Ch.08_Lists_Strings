@@ -43,7 +43,7 @@ TEXT FORMATTING:
      '''
 score = 41237
 highscore = 1023407
-print("Score:      " + str(score) )
-print("High score: " + str(highscore) )
+print(f"Score:      {score:9,}")
+print(f"High score: {highscore:9,}")
 
 
