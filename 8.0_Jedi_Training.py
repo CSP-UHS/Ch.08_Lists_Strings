@@ -23,14 +23,14 @@ print(f'The average is {av:.2}')
 from any e-mail address and print it. First ask the user for their e-mail address.
 '''
 user = True
-email = str(input("What is your email? "))
-mail = (email)
-for x in mail:
-    if x == "@":
+email = input("What is your email? ")
+username = ""
+for chr in email:
+    if chr == '@':
         break
     else:
-        mail = mail + x
-print("Your username is,", mail(x))
+        username += chr
+print("Your username is:", username)
 '''
 TEXT FORMATTING:
 3.) Make following program output the following:
