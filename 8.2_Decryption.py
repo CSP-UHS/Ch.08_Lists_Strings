@@ -8,12 +8,19 @@ your program 40 times. Use a FOR loop from -20 to +20 to generate all the possib
 
 Secret Message: Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q)x~*
 '''
-secret_message: Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q)x~*
-for i in range(-20,21):
+secret_message = "Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q)x~*"
+for i in range(-20,21,1):
+    check = len(secret_message)
     decrypt = ""
     for c in secret_message:
-        num = ord(c) + i
-        newch = chr(num)
-        decrypt = newch
-    print(decrypt)
+        id = ord(c)
+        id += i
+        newch = chr(id)
+        decrypt += newch
+    for ch in decrypt:
+        if ord(ch) == 32 or ord(ch) == 33 or ord(ch) == 46 or 65 <= ord(ch) <= 90 or 97 <= ord(ch) <= 122:
+            check -= 1
+        if check == 0:
+            break
+print(i, " : ", decrypt)
 
