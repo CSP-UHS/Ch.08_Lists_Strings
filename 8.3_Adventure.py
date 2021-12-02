@@ -13,11 +13,10 @@ print("Waking anybody up will fail you, god help you if you wake up h̷͚͝ì̴
 
 room_list = []
 item_list = []
-# Create rooms and add to list
 
-room = ["You are in your bedroom",None, None, None, None]
+room = ["You are in your bedroom. There is a box"]
 room_list.append(room)
-room = ["Bedroom 2",1, None, None, None]
+room = ["Bedroom 2", None, None, None]
 room_list.append(room)
 room = ["Bedroom 3",None,None,None,None]
 room_list.append(room)
@@ -31,7 +30,7 @@ current_room = 0
 done = False
 while not done:
     print()
-    print(room_list[current_room][0])
+    print(room_list[0])
     bing = input("Type N, E, W, S, P for backpack, Q to quit or S to search")
 
     #NORTH
@@ -72,8 +71,8 @@ while not done:
         else:
             print(item_list)
     #SEARCH
-    elif bing.lower() == "s" or bing.lower() == "search":
-        if room_list ==
+    #elif bing.lower() == "s" or bing.lower() == "search":
+        #if room_list ==
 
     #STUID
     else:
