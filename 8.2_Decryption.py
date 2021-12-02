@@ -17,10 +17,10 @@ for i in range(-20,21,1):
         id += i
         newch = chr(id)
         decrypt += newch
-    for ch in decrypt:
-        if ord(ch) == 32 or ord(ch) == 33 or ord(ch) == 46 or 65 <= ord(ch) <= 90 or 97 <= ord(ch) <= 122:
-            check -= 1
-        if check == 0:
-            break
+    # for ch in decrypt:
+    #     if ord(ch) == 32 or ord(ch) == 33 or ord(ch) == 46 or 65 <= ord(ch) <= 90 or 97 <= ord(ch) <= 122:
+    #         check -= 1
+    #     if check == 0:
+    #         break
 print(i, " : ", decrypt)
 
