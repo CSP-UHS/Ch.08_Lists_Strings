@@ -8,3 +8,12 @@ Once the user quits, print "Goodbye!"
 '''
 
 months = "JanFebMarAprMayJunJulAugSepOctNovDec"
+
+while 1:
+	month = int(input("Please enter a number between 1-12: "))
+	if month < 1 or month > 12:
+		print("ありがとございます。さよなら。(Thanks Much! Goodbye!)")
+	else:
+		pos = (month - 1) * 3
+		monthabbr = months[pos:pos+3]
+		print("The month abbreviation is: \'", monthabbr, "\'")
