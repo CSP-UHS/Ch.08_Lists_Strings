@@ -14,15 +14,15 @@ print("Waking anybody up will fail you, god help you if you wake up h̷͚͝ì̴
 room_list = []
 item_list = []
 
-room = ["You are in your bedroom. There is a box"]
+room = ["You are in your bedroom. There is a box", 2, None, None, 3] # 3 IS MEANT FOR STAIRS
 room_list.append(room)
-room = ["Bedroom 2", None, None, None]
+room = ["Bedroom 2", None, 4, 1, 3]
 room_list.append(room)
-room = ["Bedroom 3",None,None,None,None]
+room = ["Bedroom 3",None, 2, None, None]
 room_list.append(room)
-room = ["Bedroom 4",None , None, None , None]
+room = ["Bedroom 4",None, None, None, 2]
 room_list.append(room)
-room = ["Bathroom",None, None, None , None]
+room = ["Bathroom",None, None, 2, None]
 room_list.append(room)
 
 current_room = 0
