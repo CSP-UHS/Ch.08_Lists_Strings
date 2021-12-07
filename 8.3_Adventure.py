@@ -6,32 +6,40 @@ ADVENTURE PROGRAM
 3.) Expand your program to make it a real adventure game
 
 '''
+import time
+
 print("Welcome to sneaking into your kitchen simulator!")
 print("You are thirsty at 3 AM and everybody in your house is sleeping")
 print("You must find a way to get into the kitchen and drink the sacred ice juice")
 print("Waking anybody up will fail you, god help you if you wake up h̷͚͝ì̴̝m̷̼͝")
+print("You have a limited amount of time, don't waste it and you will be good to go. idk why there is time but I just needed something to add.")
 
+#time.sleep(7)
+#seconds = time.time()
+
+total_time = 0
 room_list = []
 item_list = []
-
-room = ["You are in your bedroom. There is a box", 2, None, None, 3] # 3 IS MEANT FOR STAIRS
+key = 'This key smells faintly of AXE deoderant.'
+room = ["You are in your bedroom. There is a box with an unknown object.", 2, None, None, None] # 3 IS MEANT FOR STAIRS
 room_list.append(room)
-room = ["Bedroom 2", None, 4, 1, 3]
+room = ["Bedroom 2, this room is silent and very dark, weirdly dark.", None, 4, 1, 3]
 room_list.append(room)
-room = ["Bedroom 3",None, 2, None, None]
+room = ["Bedroom 3, this room sounds sounds of a train, also known as your dad's snoring.",None, 2, None, None]
 room_list.append(room)
-room = ["Bedroom 4",None, None, None, 2]
+room = ["Bedroom 4, this room has a fan which is on and there is someone sleeping in the bedroom.",None, None, None, 2]
 room_list.append(room)
-room = ["Bathroom",None, None, 2, None]
+room = ["Bathroom, this room is what it says it is. don't bother going there because there is nothing of interest for you there.",None, None, 2, None]
 room_list.append(room)
 
 current_room = 0
 
 done = False
 while not done:
+
     print()
-    print(room_list[0])
-    bing = input("Type N, E, W, S, P for backpack, Q to quit or S to search")
+    print("\033[1;32;48m",room_list[current_room][0])
+    bing = input("\033[1;33;48m" "Type \nN \nE \nW \nS \nP for backpack \nQ to quit \nX to search")
 
     #NORTH
     if bing.lower()=="n" or bing.lower() == "north":
@@ -71,9 +79,10 @@ while not done:
         else:
             print(item_list)
     #SEARCH
-    #elif bing.lower() == "s" or bing.lower() == "search":
-        #if room_list ==
-
+    elif bing.lower() == "x" or bing.lower() == "search":
+        print("You are searching for a key.")
+        item_list.append(key)
+    #elif bing.lower() == "u" or bing.lower() == "use":
     #STUID
     else:
         print("That didn't make any sense, can you actually read please? Or let me know that there is something wrong with my code")
