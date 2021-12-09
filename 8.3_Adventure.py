@@ -14,7 +14,7 @@ print("You must find a way to get into the kitchen and drink the sacred ice juic
 print("Waking anybody up will fail you, god help you if you wake up h̷͚͝ì̴̝m̷̼͝")
 print("You have a limited amount of time, don't waste it and you will be good to go. idk why there is time but I just needed something to add.")
 
-#time.sleep(7)
+time.sleep(0)
 #seconds = time.time()
 
 total_time = 0
@@ -30,6 +30,8 @@ room_list.append(room)
 room = ["Bedroom 4, this room has a fan which is on and there is someone sleeping in the bedroom.",None, None, None, 2]
 room_list.append(room)
 room = ["Bathroom, this room is what it says it is. don't bother going there because there is nothing of interest for you there.",None, None, 2, None]
+room_list.append(room)
+room = ["You have done it, this is the stairs to the ground floor. You are relieved and now have the ability to go and get the sacred ice juice.",3, None, None, None]
 room_list.append(room)
 
 current_room = 0
