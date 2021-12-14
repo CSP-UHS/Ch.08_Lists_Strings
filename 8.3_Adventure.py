@@ -52,9 +52,6 @@ invest = ""
 
 backpack = []
 
-print()
-print("Time to get up and eat some breakfast")
-
 while not done:
     print()
     print(room_list[current_room][0])
