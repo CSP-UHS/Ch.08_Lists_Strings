@@ -8,6 +8,8 @@ ADVENTURE PROGRAM
 '''
 import random
 
+lock = None
+
 room_list = []
 #create rooms and add to room list
 room = ["You are in the master bedroom. There are two dressers to your left and right. (N,E,S,W,i,b)", 2, 3, 4, 1] #North #East #South #West
@@ -197,6 +199,7 @@ while not done:
                     safe = int(input("Code: "))
                     if safe == code:
                         print("The kitchen door has been unlocked.")
+                        lock = 8
                     else:
                         print("All of a sudden you hear a shuddering sound...")
                         print("You spin around to see the far wall of the hallway shudder into motion...")
