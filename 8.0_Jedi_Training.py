@@ -10,7 +10,18 @@ to add the numbers. Finish adding the numbers before you divide.
 '''
 a_list = [3,12,3,5,3,4,6,8,5,3,5,6,3,2,4]
 b_list = [4,15,2,7,8,3,1,10,9]
-c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
+c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]   #23
+total=0
+list=a_list
+for item in list:
+    total+=item
+
+average=total/len(a_list)
+print(f'The average is {average:.3}')
+
+
+
+
 
 
 
@@ -18,6 +29,15 @@ c_list = [5,10,13,12,5,9,2,6,1,8,8,9,11,13,14,8,2,2,6,3,9,8,10]
 2.) Write a program that will strip the username (whatever is in front of the @ symbol)
 from any e-mail address and print it. First ask the user for their e-mail address.
 '''
+
+email_input=str(input("What is your email address?"))
+username=""
+for chr in email:
+    if chr=='@':
+        break
+    else:
+        username+=chr
+print("Your email adress is: ", username)
 
 
 
@@ -33,7 +53,7 @@ TEXT FORMATTING:
      '''
 score = 41237
 highscore = 1023407
-print("Score:      " + str(score) )
-print("High score: " + str(highscore) )
+print(f"Score:    {score:>9}  " )
+print(f"Highscore:  {highscore:>9} ")
 
 

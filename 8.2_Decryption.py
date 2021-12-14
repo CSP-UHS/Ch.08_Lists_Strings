@@ -10,4 +10,19 @@ Secret Message: Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q
 '''
 
 
+code_breaker="Lxwp{j}~uj}rxw|*)bx~)l{jltnm)}qn)lxmn7)]qn)ox{ln)r|)\][XWP)r}q)x~*"
+for i in range(-20,21,1):
+    decrypt=""
+    check=len(code_breaker)
+    for c in code_breaker:
+        id = ord(c)
+        id+=i
+        if id==32 or id==33 or id==46 or 65<=id<=90 or 97<=id<=122:
+            check-=1
+        ch=chr(id)
+        if check==0:
+            break
+        decrypt+=ch
+    print(i," : ", decrypt)
+    print(check)
 
