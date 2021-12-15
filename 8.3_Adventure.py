@@ -115,9 +115,9 @@ while not done:
         time.sleep(1.5)
         if BH == 0:
             BH = 1
-            print("You notice that the cabnet is open.")
+            print("You notice that the cabinet is open.")
             time.sleep(1.5)
-            print("You what looks to be like a sticky note, A flashlight, and a key.")
+            print("You see what looks to be like a sticky note, A flashlight, sticky tack.")
             time.sleep(2)
             print("You hear a noise behind you.")
             time.sleep(1.5)
@@ -128,7 +128,7 @@ while not done:
                 time.sleep(2)
                 print("After looking for a second they disappear.")
                 time.sleep(2)
-                print("You wounder if your are just seeing things.")
+                print("You wonder if your are just seeing things.")
                 time.sleep(1.5)
                 print("You turn back around to see only an note card.")
                 time.sleep(2)
@@ -193,7 +193,7 @@ while not done:
                 time.sleep(2)
                 print("Which item will you grab.")
                 time.sleep(2)
-                print("the sticky note, the flashlight, or the key ")
+                print("the sticky note, the flashlight, or THE ONE AND ONLY STICKY TaCK! ")
                 ans = input("-")
                 if ans.lower() == "sticky note" or ans.lower() == "sn" or ans.lower() == "s" or ans.lower() == "sticky":
                     print("Grab the note card as fast as you can.")
@@ -262,6 +262,14 @@ while not done:
                             C = 21
                             K = 21
                             current_room = 9
+                elif ans.lower() == "sticky" or ans.lower() == "tack" or ans.lower() == "s" or ans.lower() == "t":
+                    time.sleep(2)
+                    print("Congradulations!")
+                    print("You passed the idot test!")
+                    time.sleep(4)
+                    print("You died")
+                    done = True
+                    break
     if rom == 8:
         print("You are in the electricity room.")
         time.sleep(2)
