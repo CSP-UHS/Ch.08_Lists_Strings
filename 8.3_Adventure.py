@@ -12,16 +12,12 @@ d=0
 e=0
 f=0
 g=0
-h=0
 j=0
 l=0
 m=0
 n=0
-o=0
 p=0
-q=0
 r=0
-t=0
 s=0
 u=0
 v=0
@@ -112,7 +108,7 @@ print()
 print()
 item_list=[]
 print(room_list[0])
-x=0
+
 while done==False:
     user_input=str(input("What would you like to do: n,s,e,w,i,e,q"))
     if user_input.lower()=="n" and current_room==0:
@@ -267,7 +263,7 @@ while done==False:
         print("You picked up the ring, but you still can't access it.")
         item=["Strange ring. There's a symbol carved onto it."]
         item_list.append(item)
-        b+=1
+        g+=1
         print()
         print()
         print("I TOLD YOU THERE WAS NO REASON TO ESCORT THIS SHIP.")
