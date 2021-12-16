@@ -477,6 +477,9 @@ while done==False:
         print("The explosion must have given you some sort of amnesisa.")
         print("You fly out of the ship, going to find the others.")
         done=True
+    if user_input.lower()=="q":
+        print("You never found your way out of the ship.")
+        break
 
 
 

@@ -37,5 +37,5 @@ for i in range(30):
     elif user_input==12:
         print(month_list[33:36])
     else:
+        print("Goodbye")
         break
-        print("goodbye")
