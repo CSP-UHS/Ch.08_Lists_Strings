@@ -89,7 +89,8 @@ while not done:
     elif bing.lower() == "x" or bing.lower() == "search":
         print("You are searching in the area to see if there are any keys.")
         if room_list[1] == 40 :
-            item_list.append(key)
+            item=["Key"]
+            item_list.append(item)
             print("You have found a key in this room.")
     #STUID
     else:
