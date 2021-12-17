@@ -17,6 +17,7 @@ print("You have a limited amount of time, don't waste it and you will be good to
 time.sleep(0)
 #seconds = time.time()
 
+
 total_time = 0
 room_list = []
 item_list = []
@@ -87,8 +88,9 @@ while not done:
     #SEARCH
     elif bing.lower() == "x" or bing.lower() == "search":
         print("You are searching in the area to see if there are any keys.")
-        if room_list ==  :
+        if room_list[1] == 40 :
             item_list.append(key)
+            print("You have found a key in this room.")
     #STUID
     else:
         print("\033[1;31;48m" "That didn't make any sense, can you actually read please? Or let me know that there is something wrong with my code")
