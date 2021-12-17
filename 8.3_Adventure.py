@@ -18,10 +18,10 @@ print("")
 once = 0
 room_list = []
 # Create rooms and add to room list
-print("You are the bedroom and you wake up to a loud noise.")
+print("You are in the bedroom and you wake up to a loud noise.")
 print("You see your dog looking up to you.")
 print("Something seems off.")
-room = ["You are the bedroom. W",None,None,None,1,0] #NESW #0
+room = ["You are in the bedroom. W",None,None,None,1,0] #NESW #0
 room_list.append(room)
 
 room = ["You are in the living room. NESW",3,d1,d1,d1,1]#10 - the whole in the wall #1
@@ -39,7 +39,7 @@ room_list.append(room)
 room = ["You are the modern hallway. NS",K,None,6,None,5]#5
 room_list.append(room)
 
-room = ["You are in the heating room. NW",5,None,None,7,6]#6
+room = ["You are in the heating room. NW",None,None,None,7,6]#6
 room_list.append(room)
 
 room = ["You are in the A/C room. NE",8,6,None, None,7]#7
@@ -48,7 +48,7 @@ room_list.append(room)
 room = ["You are in power room. NS",9,None,7,None,8 ]#8
 room_list.append(room)
 
-room = ["You are in the creepy hall way. NS",C,None,8, None,9]#9
+room = ["You are in the creepy hall way. S",C,None,8, None,9]#9
 room_list.append(room)
 
 
@@ -121,9 +121,9 @@ while not done:
             time.sleep(2)
             print("You hear a noise behind you.")
             time.sleep(1.5)
-            print("Do you want to investigate or turn around.")
+            print("Do you want to A. investigate or B. turn around.")
             ans = input("- ")
-            if ans.lower() == "turnaround" or ans.lower() == "turn around" or ans.lower() == "turn" or ans.lower() == "t":
+            if ans.lower() == "b" or ans.lower() == "2" or ans.lower() == "turn around" or ans.lower() == "b.":
                 print("You see a person right behind you.")
                 time.sleep(2)
                 print("After looking for a second they disappear.")
@@ -144,9 +144,9 @@ while not done:
                 time.sleep(2)
                 print("You hear the screams get louder.")
                 time.sleep(3)
-                print("Do you kick down the locked door or go through the vent?")
+                print("Do you A. kick down the locked door or B. go through the vent?")
                 ans = input("-")
-                if ans.lower() == "kick" or ans.lower() == "door" or ans.lower() == "k" or ans.lower() == "d":
+                if ans.lower() == "a" or ans.lower() == "1" or ans.lower() == "a." or ans.lower() == "door":
                     print("You kick down the door.")
                     time.sleep(2)
                     print("You stare out into the darkness")
@@ -154,7 +154,7 @@ while not done:
                     print("You died")
                     done = True
                     break
-                elif ans.lower() == "vent" or ans.lower() == "v" or ans.lower() == "the vent" or ans.lower() == "tv":
+                elif ans.lower() == "b" or ans.lower() == "2" or ans.lower() == "b." or ans.lower() == "vent":
                     print("You bash open the vent.")
                     time.sleep(2)
                     print("The screams slowly start to fade away")
@@ -171,31 +171,40 @@ while not done:
                     time.sleep(4)
                     print("You think the noise are coming from farther down the vent, but you are not sure.")
                     time.sleep(4)
-                    print("Will you leave the vent or continue down the vent?")
+                    print("Do you want to, A. leave the vent or B. continue down the vent?")
                     ans = input("-")
-                    if ans.lower() == "leave" or ans.lower() == "l":
+                    if ans.lower() == "a" or ans.lower() == "1":
                         print("You find your self in a creepy looking hall way.")
                         time.sleep(3)
-                        print("You see the numbers 7543")
+                        print("Through the darkness you barly see the numbers darkly writen on the wall 754321")
+                        time.sleep(3)
+                        print("For some reason the number sequence seems off. It's missing something.")
                         time.sleep(3)
                         print("You hear the sound getting closer where do you go?")
                         C = 21
                         K = 21
                         current_room = 9
+                    elif ans.lower() == "b" or ans.lower() == "2":
+                        print("You continue down the vent the sounds get louder and louder.")
+                        print("The sounds stop.")
+                        print("You see a figure right in front of you.")
+                        print("You died")
+                        done = True
+                        break
 
                 elif ans.lower() == "n" or ans.lower() == "no":
                     pass
                 #-----------------------------------------------------------
-            elif ans.lower() == "investigate" or ans.lower() == "i" or ans.lower() == "in":
+            elif ans.lower() == "a" or ans.lower() == "i" or ans.lower() == "a.":
                 print("You hear the sounds turn into screams.")
                 time.sleep(2)
                 print("You reach for the items")
                 time.sleep(2)
                 print("Which item will you grab.")
                 time.sleep(2)
-                print("the sticky note, the flashlight, or THE ONE AND ONLY STICKY TaCK! ")
+                print("A. the sticky note, B. the flashlight, or C. THE ONE AND ONLY STICKY TaCK! ")
                 ans = input("-")
-                if ans.lower() == "sticky note" or ans.lower() == "sn" or ans.lower() == "s" or ans.lower() == "sticky":
+                if ans.lower() == "sticky note" or ans.lower() == "a." or ans.lower() == "a" or ans.lower() == "1":
                     print("Grab the note card as fast as you can.")
                     time.sleep(2)
                     print("You read the sticky note quickly.")
@@ -207,20 +216,21 @@ while not done:
                     print("You died")
                     done = True
                     break
-                elif ans.lower() == "flashlight" or ans.lower() == "fl" or ans.lower() == "f" or ans.lower() == "flash":
+                elif ans.lower() == "b." or ans.lower() == "b" or ans.lower() == "f" or ans.lower() == "flashlight":
+                    flash = 1
                     print("You grab the flashlight as fast as you can and shine it where you hear the screams.")
                     time.sleep(2)
-                    print("Only to find the door that you entered through has been locked behind you.")
+                    print("Only to find the door that you've entered through has been locked behind you.")
                     time.sleep(2)
                     print("You look around in the bathroom.")
                     time.sleep(2)
                     print("You find a heating vent.")
                     time.sleep(2)
-                    print("You hear the screams get louder and you flashlight starts flickering.")
+                    print("You hear the screams get louder and your flashlight starts flickering.")
                     time.sleep(3)
-                    print("Do you kick down the locked door or go through the vent?")
+                    print("Do you A. kick down the locked door or B. go through the vent?")
                     ans = input("-")
-                    if ans.lower() == "kick" or ans.lower() == "door" or ans.lower() == "k" or ans.lower() == "d":
+                    if ans.lower() == "a" or ans.lower() == "door" or ans.lower() == "a." or ans.lower() == "1":
                         print("You kick down the door.")
                         time.sleep(2)
                         print("You flashlight flickers out.")
@@ -230,7 +240,7 @@ while not done:
                         print("You died")
                         done = True
                         break
-                    elif ans.lower() == "vent" or ans.lower() == "v" or ans.lower() == "the vent" or ans.lower() == "tv":
+                    elif ans.lower() == "vent" or ans.lower() == "b" or ans.lower() == "b." or ans.lower() == "2":
                         print("You bash open the vent.")
                         time.sleep(2)
                         print("Your flash light becomes even dimmer.")
@@ -247,26 +257,41 @@ while not done:
                         time.sleep(4)
                         print("You think the noise are coming from farther down the vent, but you are not sure.")
                         time.sleep(4)
-                        print("Will you leave the vent or continue down the vent?")
+                        print("Will you A. leave the vent or B. continue down the vent?")
                         ans = input("-")
-                        if ans.lower() == "leave" or ans.lower() == "l":
+                        if ans.lower() == "a" or ans.lower() == "a.":
                             print("You find your self in a creepy looking hall way.")
                             time.sleep(3)
-                            print("You see the numbers 7543")
-                            if flash == 0:
-                                print("You see a flashlight on the ground.")
-                                time.sleep(3)
-                                print("You grab the flashlight.")
-                                flash = 1
-                            print("You hear the sound getting closer where do you go?")
+                            print("You shine the flashlight around though the darkness.")
+                            time.sleep(3)
+                            print("You see rust and mold across the walls and floor.")
+                            time.sleep(3)
+                            print("You shine your flashlight to the walls and find 754321 writen in red across the wall.")
+                            time.sleep(5)
+                            print("Something seems wrong about the sequence. It's missing something.")
+                            time.sleep(3)
+                            print("Then you hear the sounds getting closer where do you go?")
                             C = 21
                             K = 21
                             current_room = 9
-                elif ans.lower() == "sticky" or ans.lower() == "tack" or ans.lower() == "s" or ans.lower() == "t":
+
+                        elif ans.lower() == "b" or ans.lower() == "2":
+                            print("You continue down the vent the sounds get louder and louder.")
+                            time.sleep(3)
+                            print("The sounds stop.")
+                            time.sleep(3)
+                            print("You see a figure right in front of you.")
+                            time.sleep(7)
+                            print("You died")
+                            done = True
+                            break
+
+                elif ans.lower() == "c" or ans.lower() == "tack" or ans.lower() == "c." or ans.lower() == "3":
                     time.sleep(2)
                     print("Congradulations!")
                     print("You passed the idot test!")
                     time.sleep(4)
+                    print("You would never survive in a real intruder situation.")
                     print("You died")
                     done = True
                     break
@@ -277,11 +302,11 @@ while not done:
         time.sleep(3)
         print("The screaming sound become louder.")
         time.sleep(3)
-        print("Do you attempt the code or run.")
+        print("Do you A. attempt the code or B. run.")
         ans = input("-")
-        if ans.lower() == "attempt" or ans.lower() == "a" or ans.lower() == "code" or ans.lower() == "c":
+        if ans.lower() == "1" or ans.lower() == "a." or ans.lower() == "code" or ans.lower() == "a":
             code = input("Code- ")
-            if code == "7543":
+            if code == "7654321":
                 print("The light blinks green.")
                 time.sleep(3)
                 print("A secret door opens up from the wall.")
@@ -294,15 +319,83 @@ while not done:
                 time.sleep(3)
 
                 print("YOU WON")
-                print("ENDING 1- Alive alone")
+                print("ENDING 1- My sister ending")
                 done = True
                 break
-        elif ans.lower() == "run" or ans.lower() == "r" or ans.lower() == "ru" or ans.lower() == "un":
-            print("You sprint though a couple rooms and find yourself in the heating room.")
-            print("You hear the door lock behind you.")
-            H1 = 21
-            print("You remember you left your dog in the bedroom.")
-            current_room = 5
+            else:
+                print("The sounds get louder")
+                time.sleep(3)
+                print("The light blinks red")
+                time.sleep(6)
+                print("You turn around to see the figure right in front of you.")
+                time.sleep(7)
+                print("You died.")
+                done = True
+                break
+
+        elif ans.lower() == "b" or ans.lower() == "b." or ans.lower() == "2" or ans.lower() == "run":
+            print("You run as fast as you can away from the sound. You start to out run the noise.")
+            time.sleep(5)
+            print("But then, just as you are trying to run out of the heating room.")
+            time.sleep(3)
+            print("The door your running to slams closed and locks.")
+            time.sleep(3)
+            print("You hear the noise coming to you")
+            time.sleep(3)
+            print("You see a weird human looking figure turn the corner.")
+            time.sleep(3)
+            print("What will you do?")
+            time.sleep(2)
+            print("A. prepare to fistfight the intruder, B. Use your flashlight, C. Say a joke?")
+            current_room = 6
+            ans = input("-")
+            if ans.lower() == "a" or ans.lower() == "1":
+                print("You charge the intruder and hear a loud bang. You still landed a punch in their face.")
+                time.sleep(3)
+                print("You then realise they had a gun.")
+                time.sleep(3)
+                print("You died, at least you made an effort.")
+                done = True
+                break
+            elif ans.lower() == "b" or ans.lower() == "2":
+                print("Click on the flashlight and nothing happens.")
+                time.sleep(3)
+                print("The figure starts to raise their arm.")
+                time.sleep(3)
+                print("In a last ditch effort you will?")
+                time.sleep(3)
+                print("A. Throw the flashlight. B. falcon punch.")
+                ans = input("-")
+                if ans.lower() == "a" or ans.lower() == "1":
+                    print("You throw the flashlight.")
+                    time.sleep(5)
+                    print("You see the flash light nail the figure in the head")
+                    time.sleep(6)
+                    print("The figure drops to the ground.")
+                    time.sleep(2)
+                    print("You Won!")
+                    time.sleep(1)
+                    print("Ending 2- Your dog will be glad to see you")
+                    done = True
+                    break
+                elif ans.lower() == "b" or ans.lower() == "2":
+                    print("You sprint at the intruder.")
+                    time.sleep(2)
+                    print("You see a flash and a hear a bang.")
+                    time.sleep(3)
+                    print("The intruder shot you down.")
+                    time.sleep(3)
+                    print("You died.-you were so close!")
+                    done = True
+                    break
+            elif ans.lower() == "c" or ans.lower() == "3":
+                print("You say- wats 9 + 10?")
+                time.sleep(3)
+                print("The intruder responded with a gunshot.")
+                time.sleep(6)
+                print("You died. 21?")
+                done = True
+                break
 
     print()
     print(room_list[current_room][0])
@@ -352,14 +445,3 @@ while not done:
     #Stupid
     else:
         print("Not sure you understand what you are doing???")
-
-'''
-|~~~~~~~~~~~~~|
-|      []     |
-|    [][][]   |
-|    ||[]     |
-|    ||||     |
-|    <>||     |
-|    <><>     |
-|_____________|
-'''
