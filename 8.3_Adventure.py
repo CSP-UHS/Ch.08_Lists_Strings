@@ -42,6 +42,7 @@ b=0
 print("You aren't exactly sure where you are, or how you got there.")
 print("You have seven options. North, South, East, West, List of Items, Interact, and Quit.(n,s,e,w,l,i,q)")
 print("Find you way around the ship and try to regain your memory. Something bad happened here.")
+print("There's a hole in the side of the ship. You have thirty minutes before it collapses.")
 print()
 print()
 print()
@@ -149,6 +150,7 @@ while done==False:
             print(room_list[5])
             print()
             d+=1
+            l+=1
         print()
     if user_input.lower()=="e" and current_room==1:
         print(room_list[4])
@@ -177,19 +179,23 @@ while done==False:
             print()
             print(room_list[4])
             c+=1
+            l+=1
         print()
     if user_input.lower()=="w" and current_room==-29:
         print()
         print(room_list[1])
         current_room+=30
+        l+=1
     if user_input.lower()=="e" and current_room==101:
         print()
         print(room_list[1])
         current_room-=100
+        l+=1
     if user_input.lower()=="n" and current_room==101:
         print()
         print(room_list[3])
         current_room+=1
+        l+=1
         if e==0:
             print()
             print()
@@ -218,6 +224,7 @@ while done==False:
     if user_input.lower()=="n" and current_room==-29:
         print()
         print(room_list[2])
+        l+=1
         current_room+=1
         if j==0:
             print()
@@ -247,10 +254,12 @@ while done==False:
         print()
         print(room_list[4])
         current_room-=1
+        l+=1
     if user_input.lower()=="s" and current_room==102:
         print()
         print(room_list[5])
         current_room-=1
+        l+=1
     if user_input.lower()=="s" and current_room==0:
         print()
         print("You can't access this room yet.")
@@ -258,6 +267,7 @@ while done==False:
         print()
         print(room_list[0])
         current_room-=1
+        l+=1
     if user_input.lower()=="i" and current_room==1:
         print()
         print("You picked up the ring, but you still can't access it.")
@@ -299,10 +309,10 @@ while done==False:
         print(bcolors.GUY + "WE'VE LOST THE NEWBIES.")
         print()
         print()
-        print(bcolors.GUY + "WE'LL FIND THEM LATER. OUR FIRST PRIORITY IS PROTECTING THE KORUGIAN LEADERS.")
+        print(bcolors.JOHN + "WE'LL FIND THEM LATER. OUR FIRST PRIORITY IS PROTECTING THE KORUGIAN LEADERS.")
         print()
         print()
-        print(bcolors.JOHN + "BUT....")
+        print(bcolors.GUY + "BUT....")
         print()
         print()
         print(bcolors.JOHN + "GUY, WE CAN'T WASTE ANY TIME RIGHT NOW.")
@@ -455,6 +465,7 @@ while done==False:
         print(room_list[0])
         current_room+=1000
         print()
+        l+=1
     if current_room==1 and v==1:
         print("You take out the ring and put it on your finger.")
         print()
@@ -479,6 +490,9 @@ while done==False:
         done=True
     if user_input.lower()=="q":
         print("You never found your way out of the ship.")
+        break
+    if l==30:
+        print("The ship has collapsed and you have died. The corps just lost a valuable member.")
         break
 
 
