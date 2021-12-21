@@ -126,7 +126,7 @@ while done==False:
             x+=1
         print()
 
-    if user_input.lower()=="w" and current_room==1:
+    if user_input.lower()=="e" and current_room==1:
         current_room+=100
         print(room_list[5])
         if d==0:
@@ -152,7 +152,7 @@ while done==False:
             d+=1
             l+=1
         print()
-    if user_input.lower()=="e" and current_room==1:
+    if user_input.lower()=="w" and current_room==1:
         print(room_list[4])
         current_room-=30
         if c==0:
@@ -181,12 +181,12 @@ while done==False:
             c+=1
             l+=1
         print()
-    if user_input.lower()=="w" and current_room==-29:
+    if user_input.lower()=="e" and current_room==-29:
         print()
         print(room_list[1])
         current_room+=30
         l+=1
-    if user_input.lower()=="e" and current_room==101:
+    if user_input.lower()=="w" and current_room==101:
         print()
         print(room_list[1])
         current_room-=100

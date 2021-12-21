@@ -1,7 +1,7 @@
 import random
 import arcade
 class bcolors:
-    GUARDIANS = '\033[0;34m'
+    MANHUNTERS = '\033[0;34m'
     JESSICA = '\033[0;31m'
     SIMON = '\033[1;35m'
     JOHN = '\033[1;36m'
@@ -25,6 +25,14 @@ i=0
 k=0
 l=0
 m=0
+n=0
+red=0
+orange=0
+yellow=0
+green=0
+blue=0
+purple=0
+darkstar=0
 jessica_health=2
 simon_health=2
 print("The sky's rise over the planet Okkara. Our heroes are trapped with little power in their rings.")
@@ -259,7 +267,188 @@ if done==True:
     print(bcolors.LARFLEEZE + "Well go get them!")
     construct=False
     print()
-    print(bcolors.GUY + "Simon and Jessica eventually find Glo")
+    print(bcolors.GUY + "Simon and Jessica delve into the caves of Okkara, looking for Larfleeze's rebellious constructs.")
+    print()
+    print("As they enter the largest tunnel on the planet, they find technology belonging to the controllers during their brief stay on Okkara.")
+    print()
+    print(bcolors.SIMON + "We could use this you know.")
+    print()
+    print(bcolors.JESSICA + "There's nothing here that could be used as a weapon or a means of escape.")
+    print()
+    print(bcolors.SIMON + "I don't know about that. Looks like some Darkstar equipment.")
+    print()
+    print(bcolors.JESSICA + "We still need a way to power it.")
+    print()
+    print(bcolors.SIMON  + "There's a Darkstar battery over there, but it looks old. Really old.")
+    print()
+    print(bcolors.JESSICA + "You realize that if we make on wrong move the whole thing blows.")
+    print()
+    print(bcolors.SIMON + "Never stopped us before.")
+    print()
+    print()
+    print(bcolors.HAL + "   ")
+    while construct==False:
+        print("There are multiple buttons on the battery. There is also a name. Donna Troy.")
+        print("Type 1,2,3,4, or 5 to press the buttons, or type 6 for a description of the buttons.")
+        power_input = int(input("How would you like to activate the power battery?"))
+        if power_input==6:
+            print("The first button has images of an arrow, waves, lightning, and a bird.")
+            print("The second button has an image of a face that is half old and half young")
+            print("The third button's image has the Darkstar logo on it")
+            print("The fourth button has the face of corps member Rayner on it.")
+            print("The fifth button has an image of a question mark and a clock.")
+        if power_input==2:
+            if orange==0:
+                print()
+                print("You have correctly selected the first button in sequence")
+                orange+=1
+            if orange==1:
+                print("This button has already been selected.")
+        if power_input==1:
+            if orange==1:
+                print()
+                print("You have correctly selected the second button in sequence")
+                yellow+=1
+            if orange==0:
+                print()
+                print("You have selected the wrong button and have died.")
+                print("The corps just lost two valuable members.")
+                break
+            if yellow==1:
+                print()
+                print("This button has already been selected")
+        if power_input==4:
+            if yellow==1:
+                print()
+                print("You have correctly selected the third button in sequence.")
+                green+=1
+            if yellow==0:
+                print()
+                print("You have selected the wrong button and have died.")
+                print("The corps just lost two valuable members.")
+                break
+            if green==1:
+                print()
+                print("This button has already been selected.")
+        if power_input==3:
+            if green==1:
+                print()
+                print("You have correctly selected the fourth button in sequence.")
+                blue+=1
+            if green==0:
+                print()
+                print("You have selected the wrong button and have died.")
+                print("The corps just lost two valuable members.")
+                break
+            if blue==1:
+                print()
+                print("This button has already been selected.")
+        if power_input==5:
+            if blue==1:
+                print()
+                print("You have correctly selected the final button in sequence.")
+                darkstar+=1
+                construct=True
+            if blue==0:
+                print()
+                print("You have selected the wrong button and have died.")
+                print("The corps just lost two valuable members.")
+                break
+    if construct==True:
+        print("The Darkstar battery powered up!")
+        print()
+        print(bcolors.JESSICA + "Alright, let's get these suits on.")
+        print()
+        print(bcolors.SIMON + "We're going to have to be careful of Larfleeze though.")
+        print()
+        print("This stuff is on his planet and we didn't actually find his constructs.")
+        print()
+        print(bcolors.JESSICA + "Good point. Lets leave through these caves. The opposite way we came out.")
+        print()
+        print(bcolors.GUY + "The two have almost made it out of the planets atmosphere when they are stopped by Larfleeze.")
+        print()
+        print(bcolors.LARFLEEZE + "What are you doing?! I told you not to touch anything! It's all mine!!!")
+        print()
+        print(bcolors.SIMON + "Sorry Larfleeze, but we're needed somewhere else.")
+        print()
+        print(bcolors.LARFLEEZE + "I dont care! Give me those suits now!")
+        print()
+        print(bcolors.GUY + "Larfleeze attacks!")
+        fight=False
+        larfleeze_health = 400
+        lantern_health = 100
+        while fight==False:
+            fight_input=str(input("Will you attack Larfleeze? (y/n)"))
+            if fight_input.lower()=="y":
+                print()
+                larfleeze_damage = random.randint(12, 30)
+                lantern_damage = random.randint(50, 75)
+                larfleeze_health-=lantern_damage
+                lantern_health-=larfleeze_damage
+                print("Larfleeze's health is at", larfleeze_health)
+                print("Simon and Jessica's health is at", lantern_health)
+
+                print()
+                print()
+                larfleeze_anger = random.randint(25, 35)
+                lantern_regain = random.randint(5, 10)
+                larfleeze_chance = random.randint(1, 10)
+                if larfleeze_chance >= 5:
+                    larfleeze_health -= larfleeze_anger
+                    print("In his anger, Larfleeze slams into an asteriod")
+                lantern_chance = random.randint(1, 10)
+                if lantern_chance >= 5:
+                    lantern_health += lantern_regain
+                    print("Simon and Jessica gained some health")
+                print("Larfleeze's health is at", larfleeze_health)
+                print()
+                print("Simon and Jessica's health is at", lantern_health)
+            if lantern_health <= 0:
+                print()
+                print("Simon and Jessica have died.")
+                break
+            if larfleeze_health <= 0:
+                print()
+                print("Simon and Jessica have defeated Larfleeze.")
+                fight = True
+            if fight_input.lower()=="n":
+                print()
+                print("Simon and Jessica avoided fighting Larfleeze")
+                print()
+
+    if fight==True:
+        print()
+        print(bcolors.SIMON + "We're leaving now Larfleeze.")
+        print()
+        print(bcolors.LARFLEEZE + "No! NO! Give them back! MINE! MINE MINE MINE!")
+        print()
+        print(bcolors.JESSICA + "Simon come on.")
+        print()
+        print(bcolors.SIMON + "We have no idea where they are.")
+        print()
+        print(bcolors.JESSICA + "If this is actually Donna's battery then it might know where Kyle is. ")
+        print()
+        print("I just hope their okay.")
+        print()
+        print()
+        print()
+        print()
+        print()
+        print()
+        print()
+        print()
+        print()
+        print()
+        print()
+        print()
+        print(bcolors.HIM + bcolors.HIM2 + "Manhunters, are the lanterns almost ready?")
+        print()
+        print(bcolors.MANHUNTERS + "A few more hours master.")
+        print()
+        print(bcolors.HIM+ bcolors.HIM2 + "Good. Things are going as planned then.")
+
+
+
 
 
 
