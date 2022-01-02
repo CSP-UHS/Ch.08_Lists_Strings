@@ -36,12 +36,15 @@ room = ["\033[1;31;48m" "You have done it, this is the stairs to the ground floo
 room_list.append(room)
 room = ["\033[1;31;48m" "You have done it, this is the stairs to the ground floor. You are relieved and now have the ability to go and get the sacred ice juice. N E W S P for backpack Q to quit X to search", 1, 2, 3, 4]
 room_list.append(room)
+room = ["\033[1;31;48m" "This door is locked by a key that smells like deoderant, still have no idea why it smells like that though.  N E W S P for backpack Q to quit X to search OR I to interact", 1, 2, 3, 4]
+room_list.append(room)
 # As soon as you leave your room, the door creaks closed and your attempt to get back into it is futile.
 current_room = 0
 
 #possibly add decrypt?
 #\033[1;33;48m" "N E W S P for backpack Q to quit X to search
-
+dw = int(0)
+item = [key]
 done = False
 while not done:
 
@@ -55,6 +58,9 @@ while not done:
             print("You can't go there.")
         else:
             current_room = next_room
+    #WAKES DAD UP SEQUECNCE
+    elif dw == 1:
+        current_room = [1]
     #EAST
     elif bing.lower() == "e" or bing.lower() == "east":
         next_room = room_list[current_room][2]
@@ -87,11 +93,23 @@ while not done:
             print(item_list)
     #SEARCH
     elif bing.lower() == "x" or bing.lower() == "search":
-        print("You are searching in the area to see if there are any keys.")
-        if room_list[1] == 40 :
-            item=["Key"]
-            item_list.append(item)
+        if current_room == 2:
             print("You have found a key in this room.")
+            item_list.append(item)
+        elif current_room == 3:
+            print("Your father has been woken, he throws you back into your bed.")
+            dw = int(1)
+        else:
+            print("You have found nothing in the room.")
+
+    elif current_room == 8 and len(item_list): #IF ROOM IS DOOR WITH LOCK AND HAS KEY IN POCKET:
+        print("This looks like it has a key phob similar to the one that is in your pocket.")
+    elif bing.lower() == "i" or bing.lower() == "interact":
+        print("You have found the door that leads to the kitchen. You have found the source of the ice juice!")
+        done = True
+
+
+
     #STUID
     else:
         print("\033[1;31;48m" "That didn't make any sense, can you actually read please? Or let me know that there is something wrong with my code")
