@@ -9,6 +9,7 @@ Once the user quits, print "Goodbye!"
 months = "JanFebMarAprMayJunJulAugSepOctNovDec"
 
 '''
+print("This is just to commit")
 done=True
 month_list= "JanFebMarAprMayJunJulAugSepOctNovDec"
 while done==True:
