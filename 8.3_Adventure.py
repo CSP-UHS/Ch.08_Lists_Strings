@@ -507,6 +507,7 @@ while done==False:
         print(bcolors.GUY + "BYE JOHN")
         print()
         print()
+        print()
         print("The explosion must have given you some sort of amnesisa.")
         print("You fly out of the ship, going to find the others.")
         done=True
