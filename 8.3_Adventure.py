@@ -13,7 +13,6 @@ print("You are thirsty at 3 AM and everybody in your house is sleeping")
 print("You must find a way to get into the kitchen and drink the sacred ice juice")
 print("Waking anybody up will fail you, god help you if you wake up h̷͚͝ì̴̝m̷̼͝")
 print("You have a limited amount of time, don't waste it and you will be good to go. idk why there is time but I just needed something to add.")
-print("You have a decoding project that you have not turned in yet so make sure to check it works before pull requesting it")
 time.sleep(5)
 
 
@@ -28,17 +27,13 @@ room = ["\033[1;31;48m" "Bedroom 3, this room sounds sounds of a train, also kno
 room_list.append(room)
 room = ["\033[1;31;48m" "Bedroom 4, this room has a fan which is on and there is someone sleeping in the bedroom. Directions: N E W S, P for backpack, Q to quit, X to search, H to interact", 1, 2, 3, 4]
 room_list.append(room)
-room = ["\033[1;31;48m" "Bathroom, this room is what it says it is. don't bother going there because there is nothing of interest for you there. Directions: N E W S, P for backpack, Q to quit, X to search, H to interact", 1, 2, 3, 4]
+room = ["\033[1;31;48m" "Bathroom 1, this room is what it says it is. don't bother going there because there is nothing of interest for you there. Directions: N E W S, P for backpack, Q to quit, X to search, H to interact", 1, 2, 3, 4]
 room_list.append(room)
-# As soon as you leave your room, the door creaks closed and your attempt to get back into it is futile.
-current_room = 0
-dw = int(0)
+
+current_room = int(0)
 item = [key]
 done = False
 while not done:
-
-    print()
-    #print("\033[1;32;48m",room_list[current_room][0])
     bing = input(room_list[current_room][0])
     #NORTH
     if bing.lower()=="n" or bing.lower() == "north":
@@ -48,8 +43,8 @@ while not done:
         else:
             current_room = next_room
     #WAKES DAD UP SEQUECNCE
-    elif dw == 1:
-        next_room = room_list[current_room][1]
+    #elif current_room == 1:
+        #next_room = room_list[current_room][1]
     #EAST
     elif bing.lower() == "e" or bing.lower() == "east":
         next_room = room_list[current_room][2]
@@ -83,17 +78,17 @@ while not done:
     #SEARCH
     elif bing.lower() == "x" or bing.lower() == "search":
         if room_list[1]:
-            print("You have found a key in this room.")
+            print("\033[1;34;48m" "You have found a key in this room.")
             item_list.append(item)
-        elif room_list[3]:
+        elif current_room == 1:
             print("Your father has been woken, he throws you back into your bed.")
-            next_room = room_list[current_room][3]
+            done = True
         else:
             print("You have found nothing in the room.")
     #UNLOCKING DOOR
     elif bing.lower() == "h" or bing.lower() == "interact":
         if len(item_list) == 1:
-            print("You have made it downstairs with the key that smells funny, enjoy your ice juice!")
+            print("\033[1;34;48m" "You have made it downstairs with the key that smells funny, enjoy your ice juice!")
             done = True
         else:
             print("That did nothing")
