@@ -30,8 +30,6 @@ room = ["\033[1;31;48m" "Bedroom 4, this room has a fan which is on and there is
 room_list.append(room)
 room = ["\033[1;31;48m" "Bathroom, this room is what it says it is. don't bother going there because there is nothing of interest for you there. Directions: N E W S, P for backpack, Q to quit, X to search, H to interact", 1, 2, 3, 4]
 room_list.append(room)
-room = ["\033[1;31;48m" "This door is locked by a key that smells like deoderant, still have no idea why it smells like that though. Directions: N E W S, P for backpack, Q to quit, X to search, H to interact", 1, 2, 3, 4]
-room_list.append(room)
 # As soon as you leave your room, the door creaks closed and your attempt to get back into it is futile.
 current_room = 0
 dw = int(0)
