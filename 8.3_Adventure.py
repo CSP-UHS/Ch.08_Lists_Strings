@@ -13,36 +13,27 @@ print("You are thirsty at 3 AM and everybody in your house is sleeping")
 print("You must find a way to get into the kitchen and drink the sacred ice juice")
 print("Waking anybody up will fail you, god help you if you wake up h̷͚͝ì̴̝m̷̼͝")
 print("You have a limited amount of time, don't waste it and you will be good to go. idk why there is time but I just needed something to add.")
+print("You have a decoding project that you have not turned in yet so make sure to check it works before pull requesting it")
+time.sleep(5)
 
-time.sleep(0)
-#seconds = time.time()
 
-
-total_time = 0
 room_list = []
 item_list = []
 key = 'This key smells faintly of AXE deoderant.'
-room = ["\033[1;31;48m" "You are in your bedroom. There is a box with an unknown object. N E W S P for backpack Q to quit X to search", 1, 2, 3, 4]
+room = ["\033[1;31;48m" "You are in your bedroom. There is the door with you in that room. Directions: N E W S, P for backpack, Q to quit, X to search, H to interact", 1, 2, 3, 4]
 room_list.append(room)
-room = ["\033[1;31;48m" "Bedroom 2, this room is silent and very dark, weirdly dark. N E W S P for backpack Q to quit X to search", 1, 2, 3, 4]
+room = ["\033[1;31;48m" "Bedroom 2, this room is silent and very dark, weirdly dark. Directions: N E W S, P for backpack, Q to quit, X to search, H to interact", 1, 2, 3, 4]
 room_list.append(room)
-room = ["\033[1;31;48m" "Bedroom 3, this room sounds sounds of a train, also known as your dad's snoring. N E W S P for backpack Q to quit X to search", 1, 2, 3, 4]
+room = ["\033[1;31;48m" "Bedroom 3, this room sounds sounds of a train, also known as your dad's snoring. Directions: N E W S, P for backpack, Q to quit, X to search, H to interact", 1, 2, 3, 4]
 room_list.append(room)
-room = ["\033[1;31;48m" "Bedroom 4, this room has a fan which is on and there is someone sleeping in the bedroom. N E W S P for backpack Q to quit X to search", 1, 2, 3, 4]
+room = ["\033[1;31;48m" "Bedroom 4, this room has a fan which is on and there is someone sleeping in the bedroom. Directions: N E W S, P for backpack, Q to quit, X to search, H to interact", 1, 2, 3, 4]
 room_list.append(room)
-room = ["\033[1;31;48m" "Bathroom, this room is what it says it is. don't bother going there because there is nothing of interest for you there. N E W S P for backpack Q to quit X to search", 1, 2, 3, 4]
+room = ["\033[1;31;48m" "Bathroom, this room is what it says it is. don't bother going there because there is nothing of interest for you there. Directions: N E W S, P for backpack, Q to quit, X to search, H to interact", 1, 2, 3, 4]
 room_list.append(room)
-room = ["\033[1;31;48m" "You have done it, this is the stairs to the ground floor. You are relieved and now have the ability to go and get the sacred ice juice. N E W S P for backpack Q to quit X to search", 1, 2, 3, 4]
-room_list.append(room)
-room = ["\033[1;31;48m" "You have done it, this is the stairs to the ground floor. You are relieved and now have the ability to go and get the sacred ice juice. N E W S P for backpack Q to quit X to search", 1, 2, 3, 4]
-room_list.append(room)
-room = ["\033[1;31;48m" "This door is locked by a key that smells like deoderant, still have no idea why it smells like that though.  N E W S P for backpack Q to quit X to search OR I to interact", 1, 2, 3, 4]
+room = ["\033[1;31;48m" "This door is locked by a key that smells like deoderant, still have no idea why it smells like that though. Directions: N E W S, P for backpack, Q to quit, X to search, H to interact", 1, 2, 3, 4]
 room_list.append(room)
 # As soon as you leave your room, the door creaks closed and your attempt to get back into it is futile.
 current_room = 0
-
-#possibly add decrypt?
-#\033[1;33;48m" "N E W S P for backpack Q to quit X to search
 dw = int(0)
 item = [key]
 done = False
@@ -60,7 +51,7 @@ while not done:
             current_room = next_room
     #WAKES DAD UP SEQUECNCE
     elif dw == 1:
-        current_room = [1]
+        next_room = room_list[current_room][1]
     #EAST
     elif bing.lower() == "e" or bing.lower() == "east":
         next_room = room_list[current_room][2]
@@ -93,21 +84,21 @@ while not done:
             print(item_list)
     #SEARCH
     elif bing.lower() == "x" or bing.lower() == "search":
-        if current_room == 2:
+        if room_list[1]:
             print("You have found a key in this room.")
             item_list.append(item)
-        elif current_room == 3:
+        elif room_list[3]:
             print("Your father has been woken, he throws you back into your bed.")
-            dw = int(1)
+            next_room = room_list[current_room][3]
         else:
             print("You have found nothing in the room.")
-
-    elif current_room == 8 and len(item_list): #IF ROOM IS DOOR WITH LOCK AND HAS KEY IN POCKET:
-        print("This looks like it has a key phob similar to the one that is in your pocket.")
-    elif bing.lower() == "i" or bing.lower() == "interact":
-        print("You have found the door that leads to the kitchen. You have found the source of the ice juice!")
-        done = True
-
+    #UNLOCKING DOOR
+    elif bing.lower() == "h" or bing.lower() == "interact":
+        if len(item_list) == 1:
+            print("You have made it downstairs with the key that smells funny, enjoy your ice juice!")
+            done = True
+        else:
+            print("That did nothing")
 
 
     #STUID
