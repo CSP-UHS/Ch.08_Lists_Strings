@@ -53,7 +53,12 @@ syringe=False
 fullsyringe=False
 tranq=False
 bait=False
-roomsmoved=5
+roomsmoved=6
+print()
+print("The year is 2026 the penguin army has attempted an invasion on the country of Malta,")
+print("Despite the penguins outnumbering the Matla army 5:1, the penguins seemed to be too far behind technologically to stand a chance. ")
+print("Unfortunately for you, you are one of the penguins and ended up being captured and turned into a human")
+print("Despite this you escaped and are now on the run but are trapped inside of a abandoned Malta camp")
 while not done:
     print()
     print(room_list[current_room][0])
@@ -120,7 +125,6 @@ while not done:
         if ans1.lower()=="y" or ans1.lower()=="yes":
                     print()
                     print("The fish grows a pair of legs upon touch and leaps out of the water and walks into the seal room")
-                    print()
                     fish=True
     elif bing.lower() == "i" and current_room == 1 and fish == True or bing.lower() == "interact" and current_room == 1 and fish == True:
         print()
@@ -137,7 +141,6 @@ while not done:
     if s.lower() == "a" and sealkey==False:
         print()
         print("You attempt to slowly reach your hand towards the key but are abruptly startled by the seals barking causing you to fall into the freezing water")
-        print()
         print("You try to swim back up to the surface but the seals block your path up to the surface and you slowly die")
         done = True
     if s.lower()=="b" and fish==True and sealkey==False:
@@ -145,7 +148,7 @@ while not done:
         print("After enough persuasion the fish distracts the seals and knocks the key right to your feet that you promplty pick up")
         print()
         print("KEY ITEM ACQUIRED")
-        inventory+="Key,"
+        inventory+=" Key "
         sealkey=True
     if s.lower()=="b" and fish==False:
         print()
@@ -156,12 +159,12 @@ while not done:
         fishuse=True
     #stupid
     elif current_room==3 and firstentrytopinger==False:
-        print("You enter what appears to be a bedroom for.... a penguin")
         print()
+        print("You enter what appears to be a bedroom for.... a penguin")
         firstentrytopinger=True
     if current_room==3 and sealkey==True and bing.lower()=="i" or current_room==3 and sealkey==True and bing.lower()=="interact":
         keyanswer=(input("You see a box with a keyhole perfectly fitting the key you have, do you use it? (y/n)"))
-    if keyanswer.lower()=="y" and vile==False and current_room==3  or keyanswer.lower()=="yes" and vile==False and current_room==3:
+    if keyanswer.lower()=="y" and vile==False and current_room==3  or keyanswer.lower()=="yes" and vile==False and current_room==3 and bing.lower()=="i":
        pingubedanswer=(input("you open the box only to find a code needed to unlock another box, possibly a backtrack might help you find the answer, do you attempt it?"))
        backtrack=True
     if pingubedanswer.lower()=="y" and vile==False or pingubedanswer.lower()=="yes" and vile==False:
@@ -171,7 +174,7 @@ while not done:
         print("The box swings open and reveals a vile of blue dense liquid")
         print()
         print("BLUE VILE ITEM ACQUIRED")
-        inventory+="Blue Liquid"
+        inventory+=" Blue Liquid "
         vile=True
     elif pingucodeanswer!="74GBHL" and pingucodeanswer!="ok":
         print()
@@ -194,6 +197,7 @@ while not done:
         print()
         print("There doesn't seem to be anything to do in here currently other than being attacked by polar bears")
     if current_room==5 and syringe==False:
+       print()
        okay=input("Across the lab table you see a walrus staring at you menacingly, across the table you see a empty syringe do you try and grab it? (y/n)")
     if okay=="y" and bleeding==True and syringe==False:
         print("You reach over only for the walrus to recognize the smell of blood and pounce on you dealing 10 damage!")
@@ -210,7 +214,7 @@ while not done:
         print("The walrus relaxes as you grab the syringe and slowly back out to the corner")
         print()
         print("SYRINGE ITEM ACQUIRED")
-        inventory+=",Syringe"
+        inventory+=" Syringe "
         syringe=True
     if current_room==5 and syringe==True and bing.lower()=="i":
         print()
@@ -223,12 +227,12 @@ while not done:
         print("ITEM ACQUIRED FULL SYRINGE")
         print()
         print("As time goes by you hear the speedy boats of the Malta army get closer, you don't have much more time to escape")
-        inventory="Full syringe"
+        inventory=" Full syringe "
         fullsyringe=True
     if current_room==7:
         print()
         dial=(input("There seems to be a dial on the wall do you turn it? (y/n)"))
-    if current_room==6 and bing.lower()=="i":
+    if current_room==6 and bing.lower()=="i" and roomsmoved>5:
         print()
         print("The igloo seems useless as theres nothing inside or anything unusual about it")
     if dial=="y":
@@ -246,24 +250,31 @@ while not done:
         print()
         print("As you hit the water you feel the sudden temperature drop and despite your swimming experience you freeze to death")
         done=True
-    if current_room==0 and bing.lower()=="i" and backtrack==True:
+    if current_room==0 and bing.lower()=="i" and backtrack==True and beak==False:
         print()
         print("Upon further inspection you see a letter engraved inside one of the beaks but the lighting makes it too dark to make out the rest")
+        print()
         print("ITEM AQUIRED Engraved Beak")
-        inventory+=",Engraved beak"
+        inventory+=" Engraved beak "
         beak=True
+    if current_room==0 and bing.lower()=="i" and backtrack==True and beak==True:
+        print("")
     if current_room==2 and bing.lower()=="i" and sealkey==True and backtrack==True and bait==False or current_room==2 and bing.lower()=="i" and sealkey==True and backtrack==True and tranq==False :
+        print()
         sealitem=(input("You notice a tranquilizer gun and bait which do you pick up?, A.Tranquilizer Gun B.Bait"))
-    if sealitem.lower()=="a" and tranq==False:
+    if sealitem.lower()=="a" and tranq==False and sealkey==True and backtrack==True and current_room==2:
         print()
         print("ITEM ACQUIRED TRANQ GUN")
-        inventory+=",Tranq Gun"
+        inventory+=" Tranq Gun "
         tranq=True
-    if sealitem.lower()=="b" and bait==False:
+    if sealitem.lower()=="b" and bait==False and sealkey==True and backtrack==True and current_room==2:
         print()
         print("ITEM ACQUIRED BAIT")
-        inventory+=",Bait"
+        inventory+=" Bait "
         bait=True
+    if sealitem.lower()=="b" and bait==True and sealkey==True and backtrack==True and current_room==2:
+        print()
+        print("There is nothing left to do in this room")
     if current_room==4 and bing.lower()=="i" and sealitem.lower()=="b" and beak==True:
         print()
         print("You use the bait on the bear to put it on a desk as you stand across from the other side to use the flashlight to reveal the code 74GBHL")
@@ -274,8 +285,6 @@ while not done:
     if beak==True and current_room==4 and bing.lower()=="i" and bait==False:
         print()
         print("You notice that one of the bears has something inside it's mouth, if only you could get it still")
-    if current_room==4 and bing.lower()=="n":
-        print()
-        print("You are in the attic")
+
 print()
 print("You're welcome for experiencing the best game ever")
