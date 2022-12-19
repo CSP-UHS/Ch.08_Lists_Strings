@@ -73,31 +73,34 @@ while not done:
                     print("Luckily there is nothing breakable in the box.")
                     print("Just a sheet that says pi.")
             if currentRoom == 2:
-                print("There is nothing else to see.")
+                print("Use it in the door.")
             if currentRoom == 3:
-                print("There is nothing else to see.")
+                print("Pick up the key..")
             if currentRoom == 4:
-                print("There is nothing else to see.")
+                print("Please try to escape.")
             if currentRoom == 5:
                 print("You try talk to her but as you blink she disappears. Maybe she'll be back.")
             if currentRoom == 6:
-                print("There is nothing else to see.")
+                print("Hello this is the voice in your head, go to the yellow room..")
             if currentRoom == 7:
                 print("You pick up the key. Lets see what its for.")
-                inventory[0] == "Key"
+                inventory[0] = "Key"
             if currentRoom == 8:
                 code = int(input("What is the code: "))
                 if code == 3141:
                     print("You open the box but there is nothing inside.")
                 else:
-                    print("That is not the code try again.")
+                    print("That is not the code try again. I'm hungry.")
             if currentRoom == 9:
                 if inventory[0] == "Key":
                     print("You open the door to escape this place and see a blinding white light.")
                     print("You wake up in a blank white room as you look "
                           "around you see your back to the start.")
                     print("This place will never end and you will never escape.")
-                    break
+                    x = 0
+                    y = 0
+                    currentRoom = 5
+                    continue
                 else:
                     print("You can't open the door, I guess your still stuck here.")
 
