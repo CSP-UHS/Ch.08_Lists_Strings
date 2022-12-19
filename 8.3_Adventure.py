@@ -32,7 +32,7 @@ roomList.append(room)
 currentRoom = 5
 x = 0
 y = 0
-inventory = [0]
+inventory = ["noKey"]
 
 #Main program
 done = False
@@ -65,8 +65,9 @@ while not done:
         currentRoom = nextRoom
 
     elif drct.lower() == "i": #Interact
-        if x >= 10:
+        if x >= 5:
             if currentRoom == 1:
+                y += 1
                 if y >= 5:
                     print("You give up on the key and just break the box.")
                     print("Luckily there is nothing breakable in the box.")
@@ -83,7 +84,7 @@ while not done:
                 print("There is nothing else to see.")
             if currentRoom == 7:
                 print("You pick up the key. Lets see what its for.")
-                inventory[0] == 1
+                inventory[0] == "Key"
             if currentRoom == 8:
                 code = int(input("What is the code: "))
                 if code == 3141:
@@ -91,7 +92,7 @@ while not done:
                 else:
                     print("That is not the code try again.")
             if currentRoom == 9:
-                if inventory[0] == 1:
+                if inventory[0] == "Key":
                     print("You open the door to escape this place and see a blinding white light.")
                     print("You wake up in a blank white room as you look "
                           "around you see your back to the start.")
@@ -108,7 +109,7 @@ while not done:
         break
     else:
         print("Choose again")
-    if x >= 10:
+    if x >= 5:
         roomList[1] = ["In the red room you now see a box with a lock on the front.",a,b,c,d]
         roomList[2] = ["A number painted in the middle of the green room. 8",a,b,c,d]
         roomList[3] = ["A number painted in the middle of the purple room. 6",a,b,c,d]
