@@ -75,7 +75,7 @@ while not done:
             if currentRoom == 2:
                 print("Use it in the door.")
             if currentRoom == 3:
-                print("Pick up the key..")
+                print("Pick up the key.")
             if currentRoom == 4:
                 print("Please try to escape.")
             if currentRoom == 5:
@@ -100,16 +100,15 @@ while not done:
                     x = 0
                     y = 0
                     currentRoom = 5
-                    continue
+                    inventory[0] = 0
                 else:
                     print("You can't open the door, I guess your still stuck here.")
-
         else:
             print("There is nothing to interact with. Choose again.")
 
     elif drct.lower() == "q": #Quit
-        print("You close your eyes and never open them again.")
-        break
+        print("You close your eyes hoping this is a dream, "
+              "but when you open them you are still standing in the same place.")
     else:
         print("Choose again")
     if x >= 5:
