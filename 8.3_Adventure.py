@@ -46,7 +46,7 @@ while not done:
     print()
     print(roomList[currentRoom][0])
     print("==============================")
-    drct = input("Which direct will you travel? N,E,S, or W. "
+    drct = input("Which direction will you travel? N,E,S, or W. "
                  "You can also use I to interact or Q to quit. What is your choice: ")
     if drct.lower() == "n": #North
         nextRoom = roomList[currentRoom][1]
